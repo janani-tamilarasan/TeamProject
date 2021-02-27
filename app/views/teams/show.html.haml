@@ -1,0 +1,6 @@
+%p
+  %label.control-label= @team.team_name.capitalize
+%ul.list-group
+  - @team.members.compact.each do |member|
+    %li.list-group-item= member.name.capitalize
+= link_to 'Back', teams_path

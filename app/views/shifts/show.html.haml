@@ -1,0 +1,14 @@
+%p
+  %b Team Name:
+  = @shift.team_name
+%p
+  %b Member Name:
+  = @shift.member_name
+%p
+  %b Weeks:
+  = @shift.fetch_available_weeks.present? ? @shift.fetch_available_weeks : "No weeks found"
+- if(@shift.time.present?)
+  %p
+    %b Time:
+    = @shift.time.strftime("%H:%M:%S")
+= link_to 'Back', shifts_path

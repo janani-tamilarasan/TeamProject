@@ -1,0 +1,7 @@
+.nested-fields
+  = f.hidden_field :_destroy
+  %div
+    %label.col-md-4.control-label.member-name Name
+    .form-group.string.optional.team_members_name
+      = f.input :name,class: 'form-control',label: false
+    = link_to "Remove", '#', class: "remove_fields"

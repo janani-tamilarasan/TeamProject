@@ -1,0 +1,13 @@
+I".(function() {
+  $(document).ready(function() {
+    return $(".team_selection").on("change", function() {
+      return $.ajax({
+        url: "/shifts/" + $('.team_selection option:selected').val() + "/get_members",
+        type: "GET",
+        dataType: "script"
+      });
+    });
+  });
+
+}).call(this);
+:ET

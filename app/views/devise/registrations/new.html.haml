@@ -1,0 +1,28 @@
+%h1
+  = t('.sign_up')
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = bootstrap_devise_error_messages!
+  .form-group
+    = f.label :firstname
+    = f.text_field :firstname, autofocus: true, autocomplete: 'firstname', required: true,class: 'form-control'
+  .form-group
+    = f.label :lastname
+    = f.text_field :lastname, autofocus: true, autocomplete: 'lastname', required: true,class: 'form-control'
+  .form-group
+    = f.label :dob
+    = f.date_field :dob, autofocus: true, autocomplete: 'dob',required: true,class: 'form-control'
+  .form-group
+    = f.label :email
+    = f.email_field :email, autofocus: true, autocomplete: 'email', required: true,pattern: "#{EMAIL_REGEX}",class: 'form-control'
+  .form-group
+    = f.label :password
+    = f.password_field :password, autocomplete: 'current-password', required: true,pattern: "#{PASSWORD_REGEX}",class: 'form-control'
+  .form-group
+    = f.label :password_confirmation
+    = f.password_field :password_confirmation, autocomplete: 'current-password', required: true,class: 'form-control'
+  .form-group
+    = f.label :mobile
+    = f.text_field :mobile, autofocus: true, autocomplete: 'mobile', required: true,pattern: "#{MOBILE_REGEX}",class: 'form-control'
+  .form-group
+    = f.submit t('.sign_up'), class: 'btn btn-primary'
+= render 'devise/shared/links'

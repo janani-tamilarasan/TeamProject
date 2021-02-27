@@ -1,0 +1,61 @@
+= simple_form_for @shift,:html=> { class: 'well form-horizontal' } do |f|
+  .form-group
+    %label.col-md-4.control-label Teams
+    .col-md-4.inputGroupContainer
+      .input-group.form-group
+        = f.collection_select :team_id, Team.order(:team_name), :id, :team_name,{:prompt => "Select a Team        "}, {:class=>"team-selection form-control",required: true}
+  .form-group
+    %label.col-md-4.control-label Members
+    .col-md-4.inputGroupContainer
+      .input-group.form-group
+        = f.collection_select :member_id, Member.order(:name), :id, :name, {:prompt => "Select a Member"}, {:class=>"member-selection form-control"}
+  .form-group
+    %label.col-md-4.control-label
+    .col-md-4.inputGroupContainer
+      .input-group.form-group
+        = f.check_box :sunday, checked: @shift.sunday?,class:"checkbox-inline"
+        %label.checkbox-inline.control-label Sunday
+  .form-group
+    %label.col-md-4.control-label
+    .col-md-4.inputGroupContainer
+      .input-group.form-group
+        = f.check_box :monday, checked: @shift.monday?,class:"checkbox-inline"
+        %label.checkbox-inline.control-label Monday
+  .form-group
+    %label.col-md-4.control-label
+    .col-md-4.inputGroupContainer
+      .input-group.form-group
+        = f.check_box :tuesday, checked: @shift.tuesday?,class:"checkbox-inline"
+        %label.checkbox-inline.control-label Tuesday
+  .form-group
+    %label.col-md-4.control-label
+    .col-md-4.inputGroupContainer
+      .input-group.form-group
+        = f.check_box :wednesday, checked: @shift.wednesday?,class:"checkbox-inline"
+        %label.checkbox-inline.control-label Wednesday
+  .form-group
+    %label.col-md-4.control-label
+    .col-md-4.inputGroupContainer
+      .input-group.form-group
+        = f.check_box :thrusday, checked: @shift.thrusday?,class:"checkbox-inline"
+        %label.checkbox-inline.control-label Thrusday
+  .form-group
+    %label.col-md-4.control-label
+    .col-md-4.inputGroupContainer
+      .input-group.form-group
+        = f.check_box :friday, checked: @shift.friday?,class:"checkbox-inline"
+        %label.checkbox-inline.control-label Friday
+  .form-group
+    %label.col-md-4.control-label
+    .col-md-4.inputGroupContainer
+      .input-group.form-group
+        = f.check_box :saturday, checked: @shift.saturday?,class:"checkbox-inline"
+        %label.checkbox-inline.control-label Saturday
+  .form-group
+    %label.col-md-4.control-label Timings
+    .col-md-4.inputGroupContainer
+      .input-group.form-group
+        = f.time_select :time, { class: 'form-control' }
+  #shift-btn-center.form-group
+    = f.button :submit
+    = link_to 'Back', shifts_path,class: 'btn btn-primary bck-btn'

@@ -1,0 +1,17 @@
+I"O(function() {
+  $(document).ready(function() {
+    alert(1);
+    $('.team-selection').on('change', function() {
+      $.ajax({
+        url: '/shifts/get_members',
+        type: 'GET',
+        dataType: 'script',
+        data: {
+          id: $('.team-selection option:selected').val()
+        }
+      });
+    });
+  });
+
+}).call(this);
+:ET

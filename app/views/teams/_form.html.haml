@@ -1,0 +1,22 @@
+= simple_form_for @team,:html=> { class: 'well form-horizontal' } do |f|
+  .form-group.nested-fields
+    %label.col-md-4.control-label Team Name
+    .col-md-4.inputGroupContainer
+      .input-group
+        = f.input :team_name,class: 'form-control',label: false,required: true
+        %div
+          %label#team-member.control-label Team Members
+        = f.simple_fields_for :members do |member|
+          .nested-fields
+            = member.hidden_field :_destroy
+            %div
+              = member.label :name,class:"col-md-4 control-label member-name"
+              .form-group.string.optional.team_members_name
+                = member.input :name,class: 'form-control',label: false
+              - if(member.index+1) > 1
+                = link_to "Remove", '#', class: "remove_fields"
+        %span#add-member-link
+          = link_to_add_fields "Add members", f, :members
+        #team-btn-center.form-group
+          = f.button :submit
+          = link_to 'Back', teams_path,class: 'btn btn-primary bck-btn'

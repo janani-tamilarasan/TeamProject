@@ -1,0 +1,10 @@
+I"²(function() {
+  $(document).ready(function() {
+    console.log(1);
+    return $(".team-selection").on("change", function() {
+      return alert(2);
+    });
+  });
+
+}).call(this);
+:ET

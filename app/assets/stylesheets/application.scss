@@ -1,0 +1,61 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.back-btn
+{
+    margin-top: 0px;
+}
+.save-btn
+{
+	float: left;
+	margin-right: 13px;
+}
+.member-name{
+	padding-right: 98px;
+}
+#team-member{
+	margin-left: -108px;
+    margin-bottom: 19px;
+}
+.team_members_name{
+	display:inline-table
+
+}
+
+.nested-label{
+	padding-right:37px
+}
+.remove_fields{
+    float: right;
+    margin: 5px
+
+}
+#team-btn-center{
+	padding:20px;
+}
+.invalid-feedback{
+	color :red
+}
+#team-member-error{
+	margin-bottom: 23px;
+    margin-left: 79px;
+}
+
+.nested-fields abbr{
+	display:none
+}
+.bck-btn{
+	margin-left: 23px;
+}
+.new-team{
+	    margin-left: 69px;
+}
+.display-inline{
+	display: inline-block;
+
+}
+#new-shift{
+	padding:32px;
+}
+#shift-btn-center{
+    padding-left: 296px;}

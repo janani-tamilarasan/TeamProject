@@ -1,0 +1,21 @@
+%p Hi,
+%p
+  You got a new shift for
+  %b
+    = @shift.member_name
+    \!
+  team member
+%p
+  Shift details
+  %br/
+  \--------------------------
+%p
+  Team Name:
+  \#{@shift.team_name}
+%p
+  WeeKs:
+  \#{@shift.fetch_available_weeks.present? ? @shift.fetch_available_weeks : "No weeks found"}
+- if @shift.time.present?
+  %p
+    Time:
+    \#{@shift.time.strftime("%H:%M:%S")}

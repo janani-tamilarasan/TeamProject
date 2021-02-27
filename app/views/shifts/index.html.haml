@@ -1,0 +1,29 @@
+%h1.display-inline Shifts
+= link_to 'New Shift', new_shift_path,class:"new-team display-inline"
+- if @shifts.present?
+  %table.table
+    %thead
+      %tr
+        %th{:scope => "col"} #
+        %th{:scope => "col"} Team Name
+        %th{:scope => "col"} Member Name
+        %th{:scope => "col"} Weeks Available
+        %th{:scope => "col"} Time
+        %th
+        %th
+        %th
+    %tbody
+      - @shifts.each.with_index(1)  do |shift,index|
+        %tr
+          %th{:scope => "row"}= index
+          %td= shift.team_name
+          %td= shift.member_name
+          %td= shift.fetch_available_weeks.present? ? shift.fetch_available_weeks : "No"
+          %td= shift.time.strftime("%H:%M:%S")if(shift.time.present?)
+          %td
+            = link_to 'Show', shift
+          %td= link_to 'Edit', edit_shift_path(shift)
+          %td= link_to 'Delete', shift, method: :delete, data: { confirm: 'Are you sure?' }
+- else
+  %p
+    No Shifts are found&gt;

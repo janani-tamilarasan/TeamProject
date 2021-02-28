@@ -13,9 +13,9 @@ class Shift < ApplicationRecord
 		member.name
 	end
 
-  def team_name
-  	team.team_name
-  end
+	  def team_name
+	  	team.team_name
+	  end
 
 	def is_sunday_available
 		"Sunday" if(sunday.present?)

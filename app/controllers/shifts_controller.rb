@@ -27,7 +27,9 @@ class ShiftsController < ApplicationController
 
   def get_members
     @members = Team.find_by_id(params[:id]).members
-
+    respond_to do |format|
+      format.js {render layout: false}
+    end
   end
 
   # POST /shifts or /shifts.json
@@ -36,8 +38,6 @@ class ShiftsController < ApplicationController
 
     respond_to do |format|
       if @shift.save
-                  ShiftMailer.send_mail(@shift).deliver_later
-
         format.html { redirect_to @shift, notice: "Shift was successfully created." }
         format.json { render :show, status: :created, location: @shift }
       else

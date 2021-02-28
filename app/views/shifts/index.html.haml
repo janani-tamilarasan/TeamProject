@@ -1,5 +1,6 @@
 %h1.display-inline Shifts
 = link_to 'New Shift', new_shift_path,class:"new-team display-inline"
+= link_to 'New Team', new_team_path,class:'new-team',class: 'display-inline'
 - if @shifts.present?
   %table.table
     %thead
@@ -26,4 +27,4 @@
           %td= link_to 'Delete', shift, method: :delete, data: { confirm: 'Are you sure?' }
 - else
   %p
-    No Shifts are found&gt;
+    No Shifts are found

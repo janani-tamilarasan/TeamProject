@@ -1,7 +1,7 @@
 %h1.display-inline Teams
 = link_to 'New Team', new_team_path,class:'new-team',class: 'display-inline'
 - if @teams.present?
-  = link_to 'Shifts', shifts_path,id:"new-shift"
+  = link_to 'Shifts', shifts_path,class:"new-shift"
   %table.table
     %thead
       %tr

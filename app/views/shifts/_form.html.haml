@@ -1,3 +1,7 @@
+- if @shift.errors.full_messages.any?
+  - @shift.errors.full_messages.each do |error_message|
+    = error_message if @shift.errors.full_messages.first == error_message
+    %br/
 = simple_form_for @shift,:html=> { class: 'well form-horizontal' } do |f|
   .form-group
     %label.col-md-4.control-label Teams

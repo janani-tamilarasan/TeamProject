@@ -32704,3 +32704,2633 @@ Processing by ShiftsController#get_members as JS
 Completed 200 OK in 30ms (Views: 14.6ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/" for ::1 at 2021-02-28 14:03:59 +0530
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+Processing by TeamsController#index as HTML
+Completed 401 Unauthorized in 11ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-02-28 14:03:59 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.haml within layouts/application
+  Rendered devise/shared/_links.html.haml (2.4ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (12.5ms)
+Completed 200 OK in 2489ms (Views: 2471.6ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-02-28 14:04:05 +0530
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"u0GQKMeUZECjOigRbjc+Y67/t3pzm3i1swvG/pr+rTx1r1Ov4nrUBYDWe5nIkZ529Z5VY6wu1+m6MTe4MoCkNA==", "user"=>{"email"=>"jananirailasasss@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "jananirailasasss@gmail.com"], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+Redirected to http://localhost:3000/
+Completed 302 Found in 518ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2021-02-28 14:04:06 +0530
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering teams/index.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/views/teams/index.html.haml:3
+  Rendered teams/index.html.haml within layouts/application (14.0ms)
+Completed 200 OK in 70ms (Views: 58.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/shifts" for ::1 at 2021-02-28 14:04:10 +0530
+Processing by ShiftsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/index.html.haml within layouts/application
+  [1m[36mShift Load (0.3ms)[0m  [1m[34mSELECT "shifts".* FROM "shifts" WHERE "shifts"."time" IS NOT NULL[0m
+  ↳ app/views/shifts/index.html.haml:3
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/models/shift.rb:17
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/shift.rb:13
+  Rendered shifts/index.html.haml within layouts/application (35.1ms)
+Completed 200 OK in 88ms (Views: 73.7ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:04:12 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  Rendered shifts/_form.html.haml (42.4ms)
+  Rendered shifts/new.html.haml within layouts/application (48.7ms)
+Completed 200 OK in 104ms (Views: 94.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:11:16 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:12
+  Rendered shifts/_form.html.haml (40.6ms)
+  Rendered shifts/new.html.haml within layouts/application (57.0ms)
+Completed 200 OK in 143ms (Views: 123.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:11:53 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:12
+  Rendered shifts/_form.html.haml (36.4ms)
+  Rendered shifts/new.html.haml within layouts/application (39.7ms)
+Completed 500 Internal Server Error in 58ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `map' for 1:Integer
+Did you mean?  tap):
+     9:     .col-md-4.inputGroupContainer
+    10:       .input-group.form-group
+    11:         = f.label :member_id,"mebers"
+    12:         = f.grouped_collection_select :member_id, Member.order(:name), :id, :name, {:prompt => "Select a Member"}, {:class=>"member-selection form-control"}
+    13:   .form-group
+    14:     %label.col-md-4.control-label
+    15:     .col-md-4.inputGroupContainer
+  
+app/views/shifts/_form.html.haml:12:in `block in _app_views_shifts__form_html_haml__4018893083350898461_70022374533600'
+app/views/shifts/_form.html.haml:1:in `_app_views_shifts__form_html_haml__4018893083350898461_70022374533600'
+app/views/shifts/new.html.haml:3:in `_app_views_shifts_new_html_haml__1618298829998809958_70022375270660'
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:12:25 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:12
+  Rendered shifts/_form.html.haml (30.7ms)
+  Rendered shifts/new.html.haml within layouts/application (39.0ms)
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `members' for #<Member:0x007f5eb630ec30>):
+     9:     .col-md-4.inputGroupContainer
+    10:       .input-group.form-group
+    11:         = f.label :member_id,"mebers"
+    12:         = f.grouped_collection_select :member_id, Member.order(:name), :members,:id, :name, {:prompt => "Select a Member"}, {:class=>"member-selection form-control"}
+    13:   .form-group
+    14:     %label.col-md-4.control-label
+    15:     .col-md-4.inputGroupContainer
+  
+app/views/shifts/_form.html.haml:12:in `block in _app_views_shifts__form_html_haml__4018893083350898461_70022295465120'
+app/views/shifts/_form.html.haml:1:in `_app_views_shifts__form_html_haml__4018893083350898461_70022295465120'
+app/views/shifts/new.html.haml:3:in `_app_views_shifts_new_html_haml__1618298829998809958_70022295583180'
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:13:31 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:12
+  [1m[36mMember Load (1.3ms)[0m  [1m[34mSELECT "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ?[0m  [["team_id", 29]]
+  ↳ app/views/shifts/_form.html.haml:12
+  Rendered shifts/_form.html.haml (96.7ms)
+  Rendered shifts/new.html.haml within layouts/application (99.4ms)
+Completed 500 Internal Server Error in 120ms (ActiveRecord: 1.6ms)
+
+
+  
+ActionView::Template::Error ({:prompt=>"Select a Member"} is not a symbol nor a string):
+     9:     .col-md-4.inputGroupContainer
+    10:       .input-group.form-group
+    11:         = f.label :member_id,"mebers"
+    12:         = f.grouped_collection_select :member_id, Team.order(:team_name), :members,:id, :name, {:prompt => "Select a Member"}, {:class=>"member-selection form-control"}
+    13:   .form-group
+    14:     %label.col-md-4.control-label
+    15:     .col-md-4.inputGroupContainer
+  
+app/views/shifts/_form.html.haml:12:in `block in _app_views_shifts__form_html_haml__4018893083350898461_70022299868000'
+app/views/shifts/_form.html.haml:1:in `_app_views_shifts__form_html_haml__4018893083350898461_70022299868000'
+app/views/shifts/new.html.haml:3:in `_app_views_shifts_new_html_haml__1618298829998809958_70022194058360'
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:13:52 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:12
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ?[0m  [["team_id", 29]]
+  ↳ app/views/shifts/_form.html.haml:12
+  Rendered shifts/_form.html.haml (18.7ms)
+  Rendered shifts/new.html.haml within layouts/application (27.1ms)
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 1.1ms)
+
+
+  
+ActionView::Template::Error ({:class=>"member-selection form-control"} is not a symbol nor a string):
+     9:     .col-md-4.inputGroupContainer
+    10:       .input-group.form-group
+    11:         = f.label :member_id,"mebers"
+    12:         = f.grouped_collection_select :member_id, Team.order(:team_name), :members,:id, :name, {:class=>"member-selection form-control"}
+    13:   .form-group
+    14:     %label.col-md-4.control-label
+    15:     .col-md-4.inputGroupContainer
+  
+app/views/shifts/_form.html.haml:12:in `block in _app_views_shifts__form_html_haml__4018893083350898461_70022389768740'
+app/views/shifts/_form.html.haml:1:in `_app_views_shifts__form_html_haml__4018893083350898461_70022389768740'
+app/views/shifts/new.html.haml:3:in `_app_views_shifts_new_html_haml__1618298829998809958_70022389821200'
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:14:16 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  Rendered shifts/_form.html.haml (11.4ms)
+  Rendered shifts/new.html.haml within layouts/application (13.9ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.2ms)
+
+
+  
+SyntaxError (/home/nithya/Desktop/janani/Ruby pgms/TeamProject/app/views/shifts/_form.html.haml:12: syntax error, unexpected tSTRING_DEND, expecting ')'
+:id, :name,include_blank:true}
+                              ^
+/home/nithya/Desktop/janani/Ruby pgms/TeamProject/app/views/shifts/_form.html.haml:59: syntax error, unexpected tSTRING_DEND, expecting '}'
+ime, { class: 'form-control' }
+                              ^
+/home/nithya/Desktop/janani/Ruby pgms/TeamProject/app/views/shifts/_form.html.haml:63: syntax error, unexpected keyword_end, expecting ')'
+<< ("\n</div>\n".freeze);; end;; _hamlout.buffer << ((::Haml
+                              ^
+/home/nithya/Desktop/janani/Ruby pgms/TeamProject/app/views/shifts/_form.html.haml:63: syntax error, unexpected keyword_ensure, expecting ')'
+Util.html_safe(_erbout);ensure;@haml_buffer = @haml_buffer.u
+                              ^
+/home/nithya/Desktop/janani/Ruby pgms/TeamProject/app/views/shifts/_form.html.haml:63: syntax error, unexpected keyword_end, expecting ')'
+ffer.upper if @haml_buffer;end;
+                              ^
+/home/nithya/Desktop/janani/Ruby pgms/TeamProject/app/views/shifts/_form.html.haml:66: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/shifts/_form.html.haml:12: syntax error, unexpected tSTRING_DEND, expecting ')'
+app/views/shifts/_form.html.haml:59: syntax error, unexpected tSTRING_DEND, expecting '}'
+app/views/shifts/_form.html.haml:63: syntax error, unexpected keyword_end, expecting ')'
+app/views/shifts/_form.html.haml:63: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/shifts/_form.html.haml:63: syntax error, unexpected keyword_end, expecting ')'
+app/views/shifts/_form.html.haml:66: syntax error, unexpected keyword_end, expecting ')'
+app/views/shifts/new.html.haml:3:in `_app_views_shifts_new_html_haml__1618298829998809958_70022331183800'
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:14:23 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:12
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ?[0m  [["team_id", 29]]
+  ↳ app/views/shifts/_form.html.haml:12
+  Rendered shifts/_form.html.haml (29.4ms)
+  Rendered shifts/new.html.haml within layouts/application (39.2ms)
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error ({:include_blank=>true} is not a symbol nor a string):
+     9:     .col-md-4.inputGroupContainer
+    10:       .input-group.form-group
+    11:         = f.label :member_id,"mebers"
+    12:         = f.grouped_collection_select :member_id, Team.order(:team_name), :members,:id, :name,include_blank:true
+    13:   .form-group
+    14:     %label.col-md-4.control-label
+    15:     .col-md-4.inputGroupContainer
+  
+app/views/shifts/_form.html.haml:12:in `block in _app_views_shifts__form_html_haml__4018893083350898461_70022065925480'
+app/views/shifts/_form.html.haml:1:in `_app_views_shifts__form_html_haml__4018893083350898461_70022065925480'
+app/views/shifts/new.html.haml:3:in `_app_views_shifts_new_html_haml__1618298829998809958_70022066363440'
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:14:43 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  Rendered shifts/_form.html.haml (49.5ms)
+  Rendered shifts/new.html.haml within layouts/application (59.7ms)
+Completed 500 Internal Server Error in 87ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 5, expected 6..8)):
+     9:     .col-md-4.inputGroupContainer
+    10:       .input-group.form-group
+    11:         = f.label :member_id,"mebers"
+    12:         = f.grouped_collection_select :member_id, Team.order(:team_name), :members,:id, :name
+    13:   .form-group
+    14:     %label.col-md-4.control-label
+    15:     .col-md-4.inputGroupContainer
+  
+app/views/shifts/_form.html.haml:12:in `block in _app_views_shifts__form_html_haml__4018893083350898461_70022328909300'
+app/views/shifts/_form.html.haml:1:in `_app_views_shifts__form_html_haml__4018893083350898461_70022328909300'
+app/views/shifts/new.html.haml:3:in `_app_views_shifts_new_html_haml__1618298829998809958_70022329332020'
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:15:47 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:12
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ?[0m  [["team_id", 29]]
+  ↳ app/views/shifts/_form.html.haml:12
+  Rendered shifts/_form.html.haml (30.3ms)
+  Rendered shifts/new.html.haml within layouts/application (41.6ms)
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error ({:include_blank=>true} is not a symbol nor a string):
+     9:     .col-md-4.inputGroupContainer
+    10:       .input-group.form-group
+    11:         = f.label :member_id,"mebers"
+    12:         = f.grouped_collection_select :member_id, Team.order(:team_name), :members,:id, :team_name,include_blank:true
+    13:   .form-group
+    14:     %label.col-md-4.control-label
+    15:     .col-md-4.inputGroupContainer
+  
+app/views/shifts/_form.html.haml:12:in `block in _app_views_shifts__form_html_haml__4018893083350898461_70022063066240'
+app/views/shifts/_form.html.haml:1:in `_app_views_shifts__form_html_haml__4018893083350898461_70022063066240'
+app/views/shifts/new.html.haml:3:in `_app_views_shifts_new_html_haml__1618298829998809958_70022063342780'
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:17:42 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:12
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ?[0m  [["team_id", 29]]
+  ↳ app/views/shifts/_form.html.haml:12
+  Rendered shifts/_form.html.haml (21.5ms)
+  Rendered shifts/new.html.haml within layouts/application (30.7ms)
+Completed 500 Internal Server Error in 57ms (ActiveRecord: 0.7ms)
+
+
+  
+ActionView::Template::Error ({:include_blank=>true, :required=>true} is not a symbol nor a string):
+     9:     .col-md-4.inputGroupContainer
+    10:       .input-group.form-group
+    11:         = f.label :member_id,"mebers"
+    12:         = f.grouped_collection_select :member_id, Team.order(:team_name), :members,:id, :team_name,include_blank:true,required: true
+    13:   .form-group
+    14:     %label.col-md-4.control-label
+    15:     .col-md-4.inputGroupContainer
+  
+app/views/shifts/_form.html.haml:12:in `block in _app_views_shifts__form_html_haml__4018893083350898461_70022432090500'
+app/views/shifts/_form.html.haml:1:in `_app_views_shifts__form_html_haml__4018893083350898461_70022432090500'
+app/views/shifts/new.html.haml:3:in `_app_views_shifts_new_html_haml__1618298829998809958_70022432286300'
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:18:11 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:12
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ?[0m  [["team_id", 29]]
+  ↳ app/views/shifts/_form.html.haml:12
+  Rendered shifts/_form.html.haml (20.0ms)
+  Rendered shifts/new.html.haml within layouts/application (22.6ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error ({:include_blank=>true, :required=>true} is not a symbol nor a string):
+     9:     .col-md-4.inputGroupContainer
+    10:       .input-group.form-group
+    11:         = f.label :member_id,"mebers"
+    12:         = f.grouped_collection_select :member_id, Team.order(:team_name), :members,:id, :team_name,{include_blank:true,required: true}
+    13:   .form-group
+    14:     %label.col-md-4.control-label
+    15:     .col-md-4.inputGroupContainer
+  
+app/views/shifts/_form.html.haml:12:in `block in _app_views_shifts__form_html_haml__4018893083350898461_70022381008440'
+app/views/shifts/_form.html.haml:1:in `_app_views_shifts__form_html_haml__4018893083350898461_70022381008440'
+app/views/shifts/new.html.haml:3:in `_app_views_shifts_new_html_haml__1618298829998809958_70022381359600'
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:18:49 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:12
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ?[0m  [["team_id", 29]]
+  ↳ app/views/shifts/_form.html.haml:12
+  Rendered shifts/_form.html.haml (30.8ms)
+  Rendered shifts/new.html.haml within layouts/application (38.8ms)
+Completed 500 Internal Server Error in 66ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error ({:include_blank=>true, :required=>true, :prompt=>""} is not a symbol nor a string):
+     9:     .col-md-4.inputGroupContainer
+    10:       .input-group.form-group
+    11:         = f.label :member_id,"mebers"
+    12:         = f.grouped_collection_select :member_id, Team.order(:team_name), :members,:id, :team_name,include_blank:true,required: true,prompt: ''
+    13:   .form-group
+    14:     %label.col-md-4.control-label
+    15:     .col-md-4.inputGroupContainer
+  
+app/views/shifts/_form.html.haml:12:in `block in _app_views_shifts__form_html_haml__4018893083350898461_70022297541640'
+app/views/shifts/_form.html.haml:1:in `_app_views_shifts__form_html_haml__4018893083350898461_70022297541640'
+app/views/shifts/new.html.haml:3:in `_app_views_shifts_new_html_haml__1618298829998809958_70022429139720'
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:19:00 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mCACHE Team Load (0.0ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:12
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ?[0m  [["team_id", 29]]
+  ↳ app/views/shifts/_form.html.haml:12
+  Rendered shifts/_form.html.haml (20.7ms)
+  Rendered shifts/new.html.haml within layouts/application (23.7ms)
+Completed 500 Internal Server Error in 36ms (ActiveRecord: 0.5ms)
+
+
+  
+ActionView::Template::Error ({:include_blank=>true, :required=>true, :prompt=>""} is not a symbol nor a string):
+     9:     .col-md-4.inputGroupContainer
+    10:       .input-group.form-group
+    11:         = f.label :member_id,"mebers"
+    12:         = f.grouped_collection_select :member_id, Team.order(:team_name), :members,:id, :team_name,:include_blank=>true,required: true,prompt: ''
+    13:   .form-group
+    14:     %label.col-md-4.control-label
+    15:     .col-md-4.inputGroupContainer
+  
+app/views/shifts/_form.html.haml:12:in `block in _app_views_shifts__form_html_haml__4018893083350898461_70022375899560'
+app/views/shifts/_form.html.haml:1:in `_app_views_shifts__form_html_haml__4018893083350898461_70022375899560'
+app/views/shifts/new.html.haml:3:in `_app_views_shifts_new_html_haml__1618298829998809958_70022376286180'
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:19:34 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  Rendered shifts/_form.html.haml (15.3ms)
+  Rendered shifts/new.html.haml within layouts/application (19.7ms)
+Completed 200 OK in 71ms (Views: 65.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:19:48 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  Rendered shifts/_form.html.haml (25.1ms)
+  Rendered shifts/new.html.haml within layouts/application (29.3ms)
+Completed 200 OK in 80ms (Views: 76.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/shifts/get_members?id=30&_=1614502188331" for ::1 at 2021-02-28 14:19:52 +0530
+Processing by ShiftsController#get_members as JS
+  Parameters: {"id"=>"30", "_"=>"1614502188331"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:29
+  Rendering shifts/get_members.js.erb
+  Rendered shifts/get_members.js.erb (0.5ms)
+Completed 200 OK in 31ms (Views: 14.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:22:04 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  Rendered shifts/_form.html.haml (52.5ms)
+  Rendered shifts/new.html.haml within layouts/application (62.5ms)
+Completed 500 Internal Server Error in 502ms (ActiveRecord: 1.8ms)
+
+
+  
+ActionView::Template::Error (SyntaxError: [stdin]:12:1: unexpected indentation):
+     9:       = content_for?(:title) ? yield(:title) : "TeamProject"
+    10:     = csrf_meta_tags
+    11:     = stylesheet_link_tag "application", :media => "all"
+    12:     = javascript_include_tag "application"
+    13:     /
+    14:       Le HTML5 shim, for IE6-8 support of HTML elements
+    15:     /
+  
+app/views/layouts/application.html.haml:12:in `_app_views_layouts_application_html_haml___1297627112746326012_70022375745180'
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:22:11 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  Rendered shifts/_form.html.haml (19.0ms)
+  Rendered shifts/new.html.haml within layouts/application (21.5ms)
+Completed 200 OK in 184ms (Views: 179.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:22:19 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  Rendered shifts/_form.html.haml (25.8ms)
+  Rendered shifts/new.html.haml within layouts/application (36.4ms)
+Completed 200 OK in 261ms (Views: 246.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/shifts/get_members?id=29&_=1614502339540" for ::1 at 2021-02-28 14:22:23 +0530
+Processing by ShiftsController#get_members as JS
+  Parameters: {"id"=>"29", "_"=>"1614502339540"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mTeam Load (1.0ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:29
+  Rendering shifts/get_members.js.erb
+  Rendered shifts/get_members.js.erb (1.5ms)
+Completed 200 OK in 37ms (Views: 19.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:24:23 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  Rendered shifts/_form.html.haml (33.1ms)
+  Rendered shifts/new.html.haml within layouts/application (35.4ms)
+Completed 200 OK in 125ms (Views: 77.8ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/shifts/get_members?id=30&_=1614502464032" for ::1 at 2021-02-28 14:24:27 +0530
+Processing by ShiftsController#get_members as JS
+  Parameters: {"id"=>"30", "_"=>"1614502464032"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mTeam Load (0.6ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:29
+  Rendering shifts/get_members.js.erb
+  Rendered shifts/get_members.js.erb (0.9ms)
+Completed 200 OK in 34ms (Views: 5.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:24:51 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  Rendered shifts/_form.html.haml (24.1ms)
+  Rendered shifts/new.html.haml within layouts/application (27.9ms)
+Completed 200 OK in 96ms (Views: 87.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/shifts/get_members?id=30&_=1614502491681" for ::1 at 2021-02-28 14:24:55 +0530
+Processing by ShiftsController#get_members as JS
+  Parameters: {"id"=>"30", "_"=>"1614502491681"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:29
+  Rendering shifts/get_members.js.erb
+  Rendered shifts/get_members.js.erb (0.8ms)
+Completed 200 OK in 13ms (Views: 3.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:25:11 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  Rendered shifts/_form.html.haml (26.5ms)
+  Rendered shifts/new.html.haml within layouts/application (29.4ms)
+Completed 200 OK in 81ms (Views: 77.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/shifts/get_members?id=29&_=1614502511444" for ::1 at 2021-02-28 14:25:14 +0530
+Processing by ShiftsController#get_members as JS
+  Parameters: {"id"=>"29", "_"=>"1614502511444"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mTeam Load (0.4ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:29
+  Rendering shifts/get_members.js.erb
+  Rendered shifts/get_members.js.erb (1.0ms)
+Completed 200 OK in 21ms (Views: 7.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:25:35 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  Rendered shifts/_form.html.haml (22.0ms)
+  Rendered shifts/new.html.haml within layouts/application (27.2ms)
+Completed 200 OK in 75ms (Views: 71.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/shifts/get_members?id=29&_=1614502535380" for ::1 at 2021-02-28 14:25:38 +0530
+Processing by ShiftsController#get_members as JS
+  Parameters: {"id"=>"29", "_"=>"1614502535380"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:29
+  Rendering shifts/get_members.js.erb
+  Rendered shifts/get_members.js.erb (0.7ms)
+Completed 200 OK in 9ms (Views: 2.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:26:19 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  Rendered shifts/_form.html.haml (23.6ms)
+  Rendered shifts/new.html.haml within layouts/application (27.8ms)
+Completed 200 OK in 101ms (Views: 91.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/shifts/get_members?id=29&_=1614502579250" for ::1 at 2021-02-28 14:26:22 +0530
+Processing by ShiftsController#get_members as JS
+  Parameters: {"id"=>"29", "_"=>"1614502579250"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:29
+  Rendering shifts/get_members.js.erb
+  Rendered shifts/get_members.js.erb (1.1ms)
+Completed 200 OK in 14ms (Views: 5.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:26:25 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  Rendered shifts/_form.html.haml (20.3ms)
+  Rendered shifts/new.html.haml within layouts/application (22.9ms)
+Completed 200 OK in 74ms (Views: 69.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:28:03 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  Rendered shifts/_form.html.haml (21.1ms)
+  Rendered shifts/new.html.haml within layouts/application (23.6ms)
+Completed 200 OK in 71ms (Views: 67.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/shifts/get_members?id=29&_=1614502683397" for ::1 at 2021-02-28 14:28:07 +0530
+Processing by ShiftsController#get_members as JS
+  Parameters: {"id"=>"29", "_"=>"1614502683397"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mTeam Load (0.7ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:29
+  Rendering shifts/get_members.js.erb
+  [1m[36mMember Load (0.4ms)[0m  [1m[34mSELECT "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ?[0m  [["team_id", 29]]
+  ↳ app/views/shifts/get_members.js.erb:5
+  Rendered shifts/get_members.js.erb (13.0ms)
+Completed 200 OK in 36ms (Views: 17.2ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:28:59 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mMember Load (0.4ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  Rendered shifts/_form.html.haml (67.4ms)
+  Rendered shifts/new.html.haml within layouts/application (80.0ms)
+Completed 200 OK in 168ms (Views: 154.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/shifts/get_members?id=30&_=1614502739985" for ::1 at 2021-02-28 14:29:03 +0530
+Processing by ShiftsController#get_members as JS
+  Parameters: {"id"=>"30", "_"=>"1614502739985"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mTeam Load (0.4ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:29
+  Rendering shifts/get_members.js.erb
+  [1m[36mMember Load (0.4ms)[0m  [1m[34mSELECT "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ?[0m  [["team_id", 30]]
+  ↳ app/views/shifts/get_members.js.erb:5
+  Rendered shifts/get_members.js.erb (7.2ms)
+Completed 200 OK in 22ms (Views: 9.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/shifts/get_members?id=29&_=1614502739986" for ::1 at 2021-02-28 14:29:09 +0530
+Processing by ShiftsController#get_members as JS
+  Parameters: {"id"=>"29", "_"=>"1614502739986"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:29
+  Rendering shifts/get_members.js.erb
+  [1m[36mMember Load (0.6ms)[0m  [1m[34mSELECT "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ?[0m  [["team_id", 29]]
+  ↳ app/views/shifts/get_members.js.erb:5
+  Rendered shifts/get_members.js.erb (9.7ms)
+Completed 200 OK in 34ms (Views: 16.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:29:32 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  Rendered shifts/_form.html.haml (19.4ms)
+  Rendered shifts/new.html.haml within layouts/application (23.2ms)
+Completed 200 OK in 72ms (Views: 68.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/shifts/get_members?id=29&_=1614502772606" for ::1 at 2021-02-28 14:29:36 +0530
+Processing by ShiftsController#get_members as JS
+  Parameters: {"id"=>"29", "_"=>"1614502772606"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:29
+  Rendering shifts/get_members.js.erb
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ?[0m  [["team_id", 29]]
+  ↳ app/views/shifts/get_members.js.erb:5
+  Rendered shifts/get_members.js.erb (2.7ms)
+Completed 200 OK in 12ms (Views: 4.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/shifts/get_members?id=30&_=1614502772607" for ::1 at 2021-02-28 14:29:48 +0530
+Processing by ShiftsController#get_members as JS
+  Parameters: {"id"=>"30", "_"=>"1614502772607"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:29
+  Rendering shifts/get_members.js.erb
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ?[0m  [["team_id", 30]]
+  ↳ app/views/shifts/get_members.js.erb:5
+  Rendered shifts/get_members.js.erb (2.5ms)
+Completed 200 OK in 13ms (Views: 4.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:30:15 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mMember Load (1.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  Rendered shifts/_form.html.haml (48.1ms)
+  Rendered shifts/new.html.haml within layouts/application (50.8ms)
+Completed 200 OK in 152ms (Views: 93.6ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/shifts/get_members?id=29&_=1614502815588" for ::1 at 2021-02-28 14:30:19 +0530
+Processing by ShiftsController#get_members as JS
+  Parameters: {"id"=>"29", "_"=>"1614502815588"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:29
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ? LIMIT ?[0m  [["team_id", 29], ["LIMIT", 11]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0@global/gems/did_you_mean-1.1.0/lib/did_you_mean/core_ext/name_error.rb:10
+  [1m[36mCACHE Member Load (0.0ms)[0m  [1m[34mSELECT  "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ? LIMIT ?[0m  [["team_id", 29], ["LIMIT", 11]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0@global/gems/did_you_mean-1.1.0/lib/did_you_mean/core_ext/name_error.rb:6
+Completed 500 Internal Server Error in 322ms (ActiveRecord: 1.3ms)
+
+
+  
+  [1m[36mCACHE Member Load (0.0ms)[0m  [1m[34mSELECT  "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ? LIMIT ?[0m  [["team_id", 29], ["LIMIT", 11]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0@global/gems/did_you_mean-1.1.0/lib/did_you_mean/core_ext/name_error.rb:10
+NameError (undefined local variable or method `members' for #<ShiftsController:0x007f5ebc4b6398>
+Did you mean?  @members):
+  
+app/controllers/shifts_controller.rb:30:in `get_members'
+Started GET "/shifts/get_members?id=30&_=1614502815589" for ::1 at 2021-02-28 14:30:39 +0530
+Processing by ShiftsController#get_members as JS
+  Parameters: {"id"=>"30", "_"=>"1614502815589"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mTeam Load (0.6ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:29
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ? LIMIT ?[0m  [["team_id", 30], ["LIMIT", 11]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0@global/gems/did_you_mean-1.1.0/lib/did_you_mean/core_ext/name_error.rb:10
+  [1m[36mCACHE Member Load (0.0ms)[0m  [1m[34mSELECT  "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ? LIMIT ?[0m  [["team_id", 30], ["LIMIT", 11]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0@global/gems/did_you_mean-1.1.0/lib/did_you_mean/core_ext/name_error.rb:6
+Completed 500 Internal Server Error in 443ms (ActiveRecord: 1.4ms)
+
+
+  
+  [1m[36mCACHE Member Load (0.0ms)[0m  [1m[34mSELECT  "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ? LIMIT ?[0m  [["team_id", 30], ["LIMIT", 11]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0@global/gems/did_you_mean-1.1.0/lib/did_you_mean/core_ext/name_error.rb:10
+NameError (undefined local variable or method `members' for #<ShiftsController:0x007f5e9075a850>
+Did you mean?  @members):
+  
+app/controllers/shifts_controller.rb:30:in `get_members'
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:31:04 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  Rendered shifts/_form.html.haml (36.2ms)
+  Rendered shifts/new.html.haml within layouts/application (38.7ms)
+Completed 200 OK in 124ms (Views: 78.7ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/shifts/get_members?id=29&_=1614502865285" for ::1 at 2021-02-28 14:31:12 +0530
+Processing by ShiftsController#get_members as JS
+  Parameters: {"id"=>"29", "_"=>"1614502865285"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mTeam Load (1.0ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:29
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT  "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ? LIMIT ?[0m  [["team_id", 29], ["LIMIT", 11]]
+  ↳ app/controllers/shifts_controller.rb:30
+  Rendering shifts/get_members.js.erb
+  [1m[36mMember Load (0.8ms)[0m  [1m[34mSELECT "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ?[0m  [["team_id", 29]]
+  ↳ app/views/shifts/get_members.js.erb:5
+  Rendered shifts/get_members.js.erb (6.0ms)
+Completed 200 OK in 31ms (Views: 7.5ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:31:51 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  Rendered shifts/_form.html.haml (37.4ms)
+  Rendered shifts/new.html.haml within layouts/application (46.6ms)
+Completed 200 OK in 144ms (Views: 126.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/shifts/get_members?id=29&_=1614502911405" for ::1 at 2021-02-28 14:31:54 +0530
+Processing by ShiftsController#get_members as JS
+  Parameters: {"id"=>"29", "_"=>"1614502911405"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:29
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ? LIMIT ?[0m  [["team_id", 29], ["LIMIT", 11]]
+  ↳ app/controllers/shifts_controller.rb:30
+  Rendering shifts/get_members.js.erb
+  [1m[36mMember Load (0.8ms)[0m  [1m[34mSELECT "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ?[0m  [["team_id", 29]]
+  ↳ app/views/shifts/get_members.js.erb:5
+  Rendered shifts/get_members.js.erb (6.0ms)
+Completed 200 OK in 15ms (Views: 7.0ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:32:15 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.6ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  Rendered shifts/_form.html.haml (37.3ms)
+  Rendered shifts/new.html.haml within layouts/application (48.8ms)
+Completed 200 OK in 120ms (Views: 106.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/shifts/get_members?id=29&_=1614502935345" for ::1 at 2021-02-28 14:32:18 +0530
+Processing by ShiftsController#get_members as JS
+  Parameters: {"id"=>"29", "_"=>"1614502935345"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:29
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ? LIMIT ?[0m  [["team_id", 29], ["LIMIT", 11]]
+  ↳ app/controllers/shifts_controller.rb:30
+  Rendering shifts/get_members.js.erb
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ?[0m  [["team_id", 29]]
+  ↳ app/views/shifts/get_members.js.erb:4
+  Rendered shifts/get_members.js.erb (3.5ms)
+Completed 200 OK in 14ms (Views: 5.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:32:56 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mMember Load (0.6ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  Rendered shifts/_form.html.haml (23.5ms)
+  Rendered shifts/new.html.haml within layouts/application (27.6ms)
+Completed 200 OK in 77ms (Views: 72.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/shifts/get_members?id=29&_=1614502976842" for ::1 at 2021-02-28 14:33:00 +0530
+Processing by ShiftsController#get_members as JS
+  Parameters: {"id"=>"29", "_"=>"1614502976842"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mTeam Load (0.6ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:29
+  [1m[36mMember Load (1.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ? LIMIT ?[0m  [["team_id", 29], ["LIMIT", 11]]
+  ↳ app/controllers/shifts_controller.rb:30
+  Rendering shifts/get_members.js.erb
+  [1m[36mMember Load (1.0ms)[0m  [1m[34mSELECT "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ?[0m  [["team_id", 29]]
+  ↳ app/views/shifts/get_members.js.erb:4
+  Rendered shifts/get_members.js.erb (4.6ms)
+Completed 200 OK in 33ms (Views: 8.0ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:33:23 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  Rendered shifts/_form.html.haml (25.4ms)
+  Rendered shifts/new.html.haml within layouts/application (32.0ms)
+Completed 200 OK in 112ms (Views: 98.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/shifts/get_members?id=29&_=1614503003262" for ::1 at 2021-02-28 14:33:25 +0530
+Processing by ShiftsController#get_members as JS
+  Parameters: {"id"=>"29", "_"=>"1614503003262"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mTeam Load (0.8ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:29
+  [1m[36mMember Load (0.5ms)[0m  [1m[34mSELECT  "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ? LIMIT ?[0m  [["team_id", 29], ["LIMIT", 11]]
+  ↳ app/controllers/shifts_controller.rb:30
+  Rendering shifts/get_members.js.erb
+  [1m[36mMember Load (0.5ms)[0m  [1m[34mSELECT "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ?[0m  [["team_id", 29]]
+  ↳ app/views/shifts/get_members.js.erb:4
+  Rendered shifts/get_members.js.erb (2.9ms)
+Completed 200 OK in 21ms (Views: 4.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:33:54 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  Rendered shifts/_form.html.haml (23.6ms)
+  Rendered shifts/new.html.haml within layouts/application (28.4ms)
+Completed 200 OK in 119ms (Views: 107.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/shifts/get_members?id=29&_=1614503034471" for ::1 at 2021-02-28 14:33:58 +0530
+Processing by ShiftsController#get_members as JS
+  Parameters: {"id"=>"29", "_"=>"1614503034471"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:29
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ? LIMIT ?[0m  [["team_id", 29], ["LIMIT", 11]]
+  ↳ app/controllers/shifts_controller.rb:30
+  Rendering shifts/get_members.js.erb
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ?[0m  [["team_id", 29]]
+  ↳ app/views/shifts/get_members.js.erb:4
+  Rendered shifts/get_members.js.erb (2.5ms)
+Completed 200 OK in 16ms (Views: 3.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:34:18 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  Rendered shifts/_form.html.haml (32.8ms)
+  Rendered shifts/new.html.haml within layouts/application (48.5ms)
+Completed 200 OK in 122ms (Views: 110.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/shifts/get_members?id=29&_=1614503059043" for ::1 at 2021-02-28 14:34:22 +0530
+Processing by ShiftsController#get_members as JS
+  Parameters: {"id"=>"29", "_"=>"1614503059043"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mTeam Load (0.6ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:29
+  [1m[36mMember Load (0.4ms)[0m  [1m[34mSELECT  "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ? LIMIT ?[0m  [["team_id", 29], ["LIMIT", 11]]
+  ↳ app/controllers/shifts_controller.rb:30
+  Rendering shifts/get_members.js.erb
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ?[0m  [["team_id", 29]]
+  ↳ app/views/shifts/get_members.js.erb:4
+  Rendered shifts/get_members.js.erb (4.1ms)
+Completed 200 OK in 35ms (Views: 11.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/shifts/get_members?id=30&_=1614503059044" for ::1 at 2021-02-28 14:34:27 +0530
+Processing by ShiftsController#get_members as JS
+  Parameters: {"id"=>"30", "_"=>"1614503059044"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mTeam Load (1.5ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:29
+  [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT  "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ? LIMIT ?[0m  [["team_id", 30], ["LIMIT", 11]]
+  ↳ app/controllers/shifts_controller.rb:30
+  Rendering shifts/get_members.js.erb
+  [1m[36mMember Load (0.5ms)[0m  [1m[34mSELECT "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ?[0m  [["team_id", 30]]
+  ↳ app/views/shifts/get_members.js.erb:4
+  Rendered shifts/get_members.js.erb (6.9ms)
+Completed 200 OK in 44ms (Views: 12.9ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:34:36 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  Rendered shifts/_form.html.haml (42.6ms)
+  Rendered shifts/new.html.haml within layouts/application (47.0ms)
+Completed 200 OK in 230ms (Views: 224.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/shifts/get_members?id=29&_=1614503077087" for ::1 at 2021-02-28 14:34:41 +0530
+Processing by ShiftsController#get_members as JS
+  Parameters: {"id"=>"29", "_"=>"1614503077087"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:29
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT  "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ? LIMIT ?[0m  [["team_id", 29], ["LIMIT", 11]]
+  ↳ app/controllers/shifts_controller.rb:30
+  Rendering shifts/get_members.js.erb
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ?[0m  [["team_id", 29]]
+  ↳ app/views/shifts/get_members.js.erb:4
+  Rendered shifts/get_members.js.erb (2.8ms)
+Completed 200 OK in 15ms (Views: 5.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2021-02-28 14:35:39 +0530
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering teams/index.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/views/teams/index.html.haml:3
+  Rendered teams/index.html.haml within layouts/application (11.5ms)
+Completed 200 OK in 84ms (Views: 78.1ms | ActiveRecord: 0.5ms)
+
+
+Started DELETE "/teams/29" for ::1 at 2021-02-28 14:35:43 +0530
+Processing by TeamsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"XBtRp3EC4+tFxCJGb5ojPozUgFYRt0ClsN5aJ0Zoz4jJHmQgP5Bz5PSwqjRiMAfgisbfV7HTjjUnDhYTyoMYug==", "id"=>"29"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 29], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:56
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teams_controller.rb:57
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ?[0m  [["team_id", 29]]
+  ↳ app/controllers/teams_controller.rb:57
+  [1m[36mShift Load (0.3ms)[0m  [1m[34mSELECT "shifts".* FROM "shifts" WHERE "shifts"."team_id" = ? AND "shifts"."member_id" IN (?, ?)[0m  [["team_id", 29], ["member_id", 2], ["member_id", 3]]
+  ↳ app/controllers/teams_controller.rb:57
+  [1m[36mShift Destroy (66.6ms)[0m  [1m[31mDELETE FROM "shifts" WHERE "shifts"."id" = ?[0m  [["id", 45]]
+  ↳ app/controllers/teams_controller.rb:57
+  [1m[36mShift Destroy (0.6ms)[0m  [1m[31mDELETE FROM "shifts" WHERE "shifts"."id" = ?[0m  [["id", 46]]
+  ↳ app/controllers/teams_controller.rb:57
+  [1m[36mTeam Destroy (1.8ms)[0m  [1m[31mDELETE FROM "teams" WHERE "teams"."id" = ?[0m  [["id", 29]]
+  ↳ app/controllers/teams_controller.rb:57
+  [1m[35m (150.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/teams_controller.rb:57
+Redirected to http://localhost:3000/teams
+Completed 302 Found in 244ms (ActiveRecord: 220.0ms)
+
+
+Started GET "/teams" for ::1 at 2021-02-28 14:35:43 +0530
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering teams/index.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/views/teams/index.html.haml:3
+  Rendered teams/index.html.haml within layouts/application (12.1ms)
+Completed 200 OK in 73ms (Views: 69.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/shifts" for ::1 at 2021-02-28 14:35:44 +0530
+Processing by ShiftsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/index.html.haml within layouts/application
+  [1m[36mShift Load (0.3ms)[0m  [1m[34mSELECT "shifts".* FROM "shifts" WHERE "shifts"."time" IS NOT NULL[0m
+  ↳ app/views/shifts/index.html.haml:3
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/models/shift.rb:17
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/shift.rb:13
+  Rendered shifts/index.html.haml within layouts/application (19.6ms)
+Completed 200 OK in 83ms (Views: 77.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/shifts/49/edit" for ::1 at 2021-02-28 14:35:49 +0530
+Processing by ShiftsController#edit as HTML
+  Parameters: {"id"=>"49"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mShift Load (0.2ms)[0m  [1m[34mSELECT  "shifts".* FROM "shifts" WHERE "shifts"."id" = ? LIMIT ?[0m  [["id", 49], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:78
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:24
+  Rendering shifts/edit.html.haml within layouts/application
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  Rendered shifts/_form.html.haml (20.1ms)
+  Rendered shifts/edit.html.haml within layouts/application (23.1ms)
+Completed 200 OK in 74ms (Views: 69.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/teams" for ::1 at 2021-02-28 14:36:04 +0530
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering teams/index.html.haml within layouts/application
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/views/teams/index.html.haml:3
+  Rendered teams/index.html.haml within layouts/application (7.0ms)
+Completed 200 OK in 60ms (Views: 54.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/teams/new" for ::1 at 2021-02-28 14:36:06 +0530
+Processing by TeamsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering teams/new.html.haml within layouts/application
+  Rendered teams/_member_fields.html.haml (5.1ms)
+  Rendered teams/_form.html.haml (30.9ms)
+  Rendered teams/new.html.haml within layouts/application (34.1ms)
+Completed 200 OK in 111ms (Views: 80.3ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/teams" for ::1 at 2021-02-28 14:36:29 +0530
+Processing by TeamsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jg5/q6wb6E+0xTTO1mJwpHXXfVS1tCNtBdES3PYmQg+F0sqDBVWnILPwrs5M2ICTCwy36vdPS4gFUXAC0ALmWw==", "team"=>{"team_name"=>"Team3", "members_attributes"=>{"0"=>{"_destroy"=>"false", "name"=>"3A"}, "1614503178553"=>{"_destroy"=>"false", "name"=>"3B"}}}, "commit"=>"Create Team"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teams_controller.rb:31
+  [1m[36mTeam Create (0.4ms)[0m  [1m[32mINSERT INTO "teams" ("team_name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["team_name", "Team3"], ["created_at", "2021-02-28 09:06:29.061816"], ["updated_at", "2021-02-28 09:06:29.061816"]]
+  ↳ app/controllers/teams_controller.rb:31
+  [1m[36mMember Create (1.4ms)[0m  [1m[32mINSERT INTO "members" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "3A"], ["created_at", "2021-02-28 09:06:29.067306"], ["updated_at", "2021-02-28 09:06:29.067306"]]
+  ↳ app/controllers/teams_controller.rb:31
+  [1m[36mShift Create (0.2ms)[0m  [1m[32mINSERT INTO "shifts" ("member_id", "team_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["member_id", 6], ["team_id", 31], ["created_at", "2021-02-28 09:06:29.075189"], ["updated_at", "2021-02-28 09:06:29.075189"]]
+  ↳ app/controllers/teams_controller.rb:31
+[ActiveJob] Enqueued ActionMailer::DeliveryJob (Job ID: 3397d0af-65b4-490c-a4b6-c02096381d43) to Async(mailers) with arguments: "ShiftMailer", "send_mail", "deliver_now", #<GlobalID:0x007f5eb048a470 @uri=#<URI::GID gid://team-project/Shift/50>>
+  [1m[36mShift Load (0.2ms)[0m  [1m[34mSELECT  "shifts".* FROM "shifts" WHERE "shifts"."id" = ? LIMIT ?[0m  [["id", 50], ["LIMIT", 1]]
+  [1m[36mMember Create (0.1ms)[0m  [1m[32mINSERT INTO "members" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "3B"], ["created_at", "2021-02-28 09:06:29.921563"], ["updated_at", "2021-02-28 09:06:29.921563"]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  ↳ app/controllers/teams_controller.rb:31
+  [1m[36mShift Create (0.3ms)[0m  [1m[32mINSERT INTO "shifts" ("member_id", "team_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["member_id", 7], ["team_id", 31], ["created_at", "2021-02-28 09:06:29.924911"], ["updated_at", "2021-02-28 09:06:29.924911"]]
+  ↳ app/controllers/teams_controller.rb:31
+[ActiveJob] Enqueued ActionMailer::DeliveryJob (Job ID: fe4fff8c-9841-46e3-b470-01da6517a9f0) to Async(mailers) with arguments: "ShiftMailer", "send_mail", "deliver_now", #<GlobalID:0x007f5eb04e8638 @uri=#<URI::GID gid://team-project/Shift/51>>
+  [1m[36mShift Load (0.7ms)[0m  [1m[34mSELECT  "shifts".* FROM "shifts" WHERE "shifts"."id" = ? LIMIT ?[0m  [["id", 51], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[35m (147.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/teams_controller.rb:31
+[ActiveJob] [ActionMailer::DeliveryJob] [fe4fff8c-9841-46e3-b470-01da6517a9f0] Performing ActionMailer::DeliveryJob (Job ID: fe4fff8c-9841-46e3-b470-01da6517a9f0) from Async(mailers) with arguments: "ShiftMailer", "send_mail", "deliver_now", #<GlobalID:0x007f5eb055ef18 @uri=#<URI::GID gid://team-project/Shift/51>>
+Redirected to http://localhost:3000/teams/31
+Completed 302 Found in 1078ms (ActiveRecord: 150.5ms)
+
+
+Started GET "/teams/31" for ::1 at 2021-02-28 14:36:30 +0530
+Processing by TeamsController#show as HTML
+  Parameters: {"id"=>"31"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[35mSQL (0.3ms)[0m  [1m[34mSELECT  DISTINCT "teams"."id" FROM "teams" LEFT OUTER JOIN "shifts" ON "shifts"."team_id" = "teams"."id" WHERE "shifts"."team_id" = ? ORDER BY "teams"."id" ASC LIMIT ?[0m  [["team_id", 31], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::DeliveryJob] [fe4fff8c-9841-46e3-b470-01da6517a9f0]   Rendering shift_mailer/send_mail.html.haml within layouts/mailer
+  ↳ app/controllers/teams_controller.rb:68
+[ActiveJob] [ActionMailer::DeliveryJob] [fe4fff8c-9841-46e3-b470-01da6517a9f0]   [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[34mSELECT "teams"."id" AS t0_r0, "teams"."team_name" AS t0_r1, "teams"."created_at" AS t0_r2, "teams"."updated_at" AS t0_r3, "shifts"."id" AS t1_r0, "shifts"."sunday" AS t1_r1, "shifts"."monday" AS t1_r2, "shifts"."tuesday" AS t1_r3, "shifts"."wednesday" AS t1_r4, "shifts"."thrusday" AS t1_r5, "shifts"."friday" AS t1_r6, "shifts"."saturday" AS t1_r7, "shifts"."time" AS t1_r8, "shifts"."member_id" AS t1_r9, "shifts"."team_id" AS t1_r10, "shifts"."created_at" AS t1_r11, "shifts"."updated_at" AS t1_r12 FROM "teams" LEFT OUTER JOIN "shifts" ON "shifts"."team_id" = "teams"."id" WHERE "shifts"."team_id" = ? AND "teams"."id" = ? ORDER BY "teams"."id" ASC[0m  [["team_id", 31], ["id", 31]]
+[ActiveJob] [ActionMailer::DeliveryJob] [fe4fff8c-9841-46e3-b470-01da6517a9f0]   ↳ app/models/shift.rb:13
+  ↳ app/controllers/teams_controller.rb:68
+[ActiveJob] [ActionMailer::DeliveryJob] [fe4fff8c-9841-46e3-b470-01da6517a9f0]   [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::DeliveryJob] [fe4fff8c-9841-46e3-b470-01da6517a9f0]   ↳ app/models/shift.rb:17
+[ActiveJob] [ActionMailer::DeliveryJob] [fe4fff8c-9841-46e3-b470-01da6517a9f0]   Rendered shift_mailer/send_mail.html.haml within layouts/mailer (12.4ms)
+  Rendering teams/show.html.haml within layouts/application
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ?[0m  [["team_id", 31]]
+  ↳ app/views/teams/show.html.haml:4
+  Rendered teams/show.html.haml within layouts/application (4.2ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [fe4fff8c-9841-46e3-b470-01da6517a9f0]   Rendering shift_mailer/send_mail.text.haml within layouts/mailer
+[ActiveJob] [ActionMailer::DeliveryJob] [fe4fff8c-9841-46e3-b470-01da6517a9f0]   Rendered shift_mailer/send_mail.text.haml within layouts/mailer (2.7ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [fe4fff8c-9841-46e3-b470-01da6517a9f0] ShiftMailer#send_mail: processed outbound mail in 284.2ms
+Completed 200 OK in 318ms (Views: 285.3ms | ActiveRecord: 0.9ms)
+
+
+[ActiveJob] [ActionMailer::DeliveryJob] [fe4fff8c-9841-46e3-b470-01da6517a9f0] Sent mail to cr_dev@full-cycle.com (3422.2ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [fe4fff8c-9841-46e3-b470-01da6517a9f0] Date: Sun, 28 Feb 2021 14:36:30 +0530
+From: from@example.com
+To: cr_dev@full-cycle.com
+Message-ID: <603b5d166e2fe_f553faf5821c83833e9@nithya-Lenovo-V110-15ISK.mail>
+Subject: You got a new shifts  updates!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_603b5d165b12a_f553faf5821c8383286";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_603b5d165b12a_f553faf5821c8383286
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_603b5d165b12a_f553faf5821c8383286
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+<style>
+  /* Email styles need to be inline */
+</style>
+</head>
+<body>
+<!DOCTYPE html>
+<html>
+<head>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+</head>
+<body>
+<p>Hi,</p>
+<p>
+You got a new shift for
+<b>
+3B
+!
+</b>
+team member
+</p>
+<p>
+Shift details
+<br>
+--------------------------
+</p>
+<p>
+Team Name:
+Team3
+</p>
+<p>
+WeeKs:
+No weeks found
+</p>
+</body>
+</html>
+
+</body>
+</html>
+
+----==_mimepart_603b5d165b12a_f553faf5821c8383286--
+
+Started GET "/teams" for ::1 at 2021-02-28 14:36:33 +0530
+[ActiveJob] [ActionMailer::DeliveryJob] [fe4fff8c-9841-46e3-b470-01da6517a9f0] Performed ActionMailer::DeliveryJob (Job ID: fe4fff8c-9841-46e3-b470-01da6517a9f0) from Async(mailers) in 3710.67ms
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering teams/index.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/views/teams/index.html.haml:3
+  Rendered teams/index.html.haml within layouts/application (9.1ms)
+Completed 200 OK in 57ms (Views: 53.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/shifts" for ::1 at 2021-02-28 14:36:36 +0530
+Processing by ShiftsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/index.html.haml within layouts/application
+  [1m[36mShift Load (0.3ms)[0m  [1m[34mSELECT "shifts".* FROM "shifts" WHERE "shifts"."time" IS NOT NULL[0m
+  ↳ app/views/shifts/index.html.haml:3
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/models/shift.rb:17
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/models/shift.rb:13
+  Rendered shifts/index.html.haml within layouts/application (26.1ms)
+Completed 200 OK in 97ms (Views: 89.8ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/teams/30" for ::1 at 2021-02-28 14:36:41 +0530
+Processing by TeamsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"rJAIduLKkmd0dfmLkDPKdNvLRvBSVWtYnCLjAuenv6Y5lT3xrFgCaMUBcfmdme6q3dkZ8fIxpcgL8q82a0xolA==", "id"=>"30"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 30], ["LIMIT", 1]]
+  ↳ app/controllers/teams_controller.rb:56
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/teams_controller.rb:57
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ?[0m  [["team_id", 30]]
+  ↳ app/controllers/teams_controller.rb:57
+  [1m[36mShift Load (0.3ms)[0m  [1m[34mSELECT "shifts".* FROM "shifts" WHERE "shifts"."team_id" = ? AND "shifts"."member_id" IN (?, ?, ?)[0m  [["team_id", 30], ["member_id", 4], ["member_id", 5], ["member_id", 4]]
+  ↳ app/controllers/teams_controller.rb:57
+  [1m[36mShift Destroy (0.3ms)[0m  [1m[31mDELETE FROM "shifts" WHERE "shifts"."id" = ?[0m  [["id", 47]]
+  ↳ app/controllers/teams_controller.rb:57
+  [1m[36mShift Destroy (0.1ms)[0m  [1m[31mDELETE FROM "shifts" WHERE "shifts"."id" = ?[0m  [["id", 48]]
+  ↳ app/controllers/teams_controller.rb:57
+  [1m[36mShift Destroy (0.1ms)[0m  [1m[31mDELETE FROM "shifts" WHERE "shifts"."id" = ?[0m  [["id", 49]]
+  ↳ app/controllers/teams_controller.rb:57
+  [1m[36mTeam Destroy (0.3ms)[0m  [1m[31mDELETE FROM "teams" WHERE "teams"."id" = ?[0m  [["id", 30]]
+  ↳ app/controllers/teams_controller.rb:57
+  [1m[35m (163.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/teams_controller.rb:57
+Redirected to http://localhost:3000/teams
+Completed 302 Found in 188ms (ActiveRecord: 165.4ms)
+
+
+Started GET "/teams" for ::1 at 2021-02-28 14:36:42 +0530
+Processing by TeamsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering teams/index.html.haml within layouts/application
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams"[0m
+  ↳ app/views/teams/index.html.haml:3
+  Rendered teams/index.html.haml within layouts/application (11.6ms)
+Completed 200 OK in 78ms (Views: 71.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/shifts" for ::1 at 2021-02-28 14:36:44 +0530
+Processing by ShiftsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/index.html.haml within layouts/application
+  [1m[36mShift Load (0.6ms)[0m  [1m[34mSELECT "shifts".* FROM "shifts" WHERE "shifts"."time" IS NOT NULL[0m
+  ↳ app/views/shifts/index.html.haml:3
+  Rendered shifts/index.html.haml within layouts/application (28.3ms)
+Completed 200 OK in 110ms (Views: 99.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/shifts" for ::1 at 2021-02-28 14:37:03 +0530
+Processing by ShiftsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/index.html.haml within layouts/application
+  [1m[36mShift Load (0.2ms)[0m  [1m[34mSELECT "shifts".* FROM "shifts" WHERE "shifts"."time" IS NOT NULL[0m
+  ↳ app/views/shifts/index.html.haml:3
+  Rendered shifts/index.html.haml within layouts/application (6.4ms)
+Completed 200 OK in 60ms (Views: 53.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/shifts" for ::1 at 2021-02-28 14:38:05 +0530
+Processing by ShiftsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/index.html.haml within layouts/application
+  Rendered shifts/index.html.haml within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (The line was indented 2 levels deeper than the previous line.):
+    2: = link_to 'New Shift', new_shift_path,class:"new-team display-inline"
+    3:  = link_to 'Shifts', shifts_path,class:"new-shift"
+    4: - if @shifts.present?
+    5:   %table.table
+    6:     %thead
+    7:       %tr
+    8:         %th{:scope => "col"} #
+  
+app/views/shifts/index.html.haml:5
+Started GET "/shifts" for ::1 at 2021-02-28 14:38:30 +0530
+Processing by ShiftsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/index.html.haml within layouts/application
+  Rendered shifts/index.html.haml within layouts/application (2.8ms)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (Inconsistent indentation: 2 spaces used for indentation, but the rest of the document was indented using 3 spaces.):
+    2: = link_to 'New Shift', new_shift_path,class:"new-team display-inline"
+    3:    = link_to 'Shifts', shifts_path,class:"new-shift"
+    4: - if @shifts.present?
+    5:   %table.table
+    6:     %thead
+    7:       %tr
+    8:         %th{:scope => "col"} #
+  
+app/views/shifts/index.html.haml:5
+Started GET "/shifts" for ::1 at 2021-02-28 14:38:39 +0530
+Processing by ShiftsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/index.html.haml within layouts/application
+  [1m[36mShift Load (0.2ms)[0m  [1m[34mSELECT "shifts".* FROM "shifts" WHERE "shifts"."time" IS NOT NULL[0m
+  ↳ app/views/shifts/index.html.haml:4
+  Rendered shifts/index.html.haml within layouts/application (13.6ms)
+Completed 200 OK in 1675ms (Views: 1662.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/shifts" for ::1 at 2021-02-28 14:38:46 +0530
+Processing by ShiftsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/index.html.haml within layouts/application
+  [1m[36mShift Load (0.1ms)[0m  [1m[34mSELECT "shifts".* FROM "shifts" WHERE "shifts"."time" IS NOT NULL[0m
+  ↳ app/views/shifts/index.html.haml:4
+  Rendered shifts/index.html.haml within layouts/application (9.8ms)
+Completed 200 OK in 57ms (Views: 53.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/shifts" for ::1 at 2021-02-28 14:38:48 +0530
+Processing by ShiftsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/index.html.haml within layouts/application
+  [1m[36mShift Load (0.3ms)[0m  [1m[34mSELECT "shifts".* FROM "shifts" WHERE "shifts"."time" IS NOT NULL[0m
+  ↳ app/views/shifts/index.html.haml:4
+  Rendered shifts/index.html.haml within layouts/application (29.6ms)
+Completed 200 OK in 106ms (Views: 94.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/shifts" for ::1 at 2021-02-28 14:38:50 +0530
+Processing by ShiftsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/index.html.haml within layouts/application
+  [1m[36mShift Load (0.4ms)[0m  [1m[34mSELECT "shifts".* FROM "shifts" WHERE "shifts"."time" IS NOT NULL[0m
+  ↳ app/views/shifts/index.html.haml:4
+  Rendered shifts/index.html.haml within layouts/application (30.3ms)
+Completed 200 OK in 111ms (Views: 93.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/shifts" for ::1 at 2021-02-28 14:39:29 +0530
+Processing by ShiftsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/index.html.haml within layouts/application
+  [1m[36mShift Load (0.1ms)[0m  [1m[34mSELECT "shifts".* FROM "shifts" WHERE "shifts"."time" IS NOT NULL[0m
+  ↳ app/views/shifts/index.html.haml:4
+  Rendered shifts/index.html.haml within layouts/application (5.4ms)
+Completed 200 OK in 50ms (Views: 45.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:39:33 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  Rendered shifts/_form.html.haml (23.6ms)
+  Rendered shifts/new.html.haml within layouts/application (28.3ms)
+Completed 200 OK in 95ms (Views: 89.6ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/shifts" for ::1 at 2021-02-28 14:39:37 +0530
+Processing by ShiftsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HdtLJqnNBUSpkSCbi5b3DxTLX+V61C/Ru9u1PXbAuHWjmEdQthCrm1bhvPou9YZzYCC2HqK0yTe50Y+ZXx1neA==", "shift"=>{"team_id"=>"", "member_id"=>"", "sunday"=>"0", "monday"=>"0", "tuesday"=>"0", "wednesday"=>"0", "thrusday"=>"0", "friday"=>"0", "saturday"=>"0", "time(1i)"=>"2021", "time(2i)"=>"2", "time(3i)"=>"28", "time(4i)"=>"09", "time(5i)"=>"09"}, "commit"=>"Create Shift"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/shifts_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/shifts_controller.rb:41
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  Rendered shifts/_form.html.haml (23.3ms)
+  Rendered shifts/new.html.haml within layouts/application (30.1ms)
+Completed 422 Unprocessable Entity in 98ms (Views: 81.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/shifts" for ::1 at 2021-02-28 14:41:23 +0530
+Processing by ShiftsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/index.html.haml within layouts/application
+  [1m[36mShift Load (0.1ms)[0m  [1m[34mSELECT "shifts".* FROM "shifts" WHERE "shifts"."time" IS NOT NULL[0m
+  ↳ app/views/shifts/index.html.haml:4
+  Rendered shifts/index.html.haml within layouts/application (6.1ms)
+Completed 200 OK in 63ms (Views: 58.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:41:25 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  Rendered shifts/_form.html.haml (22.1ms)
+  Rendered shifts/new.html.haml within layouts/application (26.8ms)
+Completed 200 OK in 75ms (Views: 71.0ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/shifts" for ::1 at 2021-02-28 14:41:27 +0530
+Processing by ShiftsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"NLSBbe5qD16rWov8jz0HkFKxV/y1o+c9cyk71AOOLE6K940b8behgVQqF50qXnbsJlq+B23DAdtxIwFwKlPzQw==", "shift"=>{"team_id"=>"", "member_id"=>"", "sunday"=>"0", "monday"=>"0", "tuesday"=>"0", "wednesday"=>"0", "thrusday"=>"0", "friday"=>"0", "saturday"=>"0", "time(1i)"=>"2021", "time(2i)"=>"2", "time(3i)"=>"28", "time(4i)"=>"09", "time(5i)"=>"11"}, "commit"=>"Create Shift"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/shifts_controller.rb:41
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/shifts_controller.rb:41
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  Rendered shifts/_form.html.haml (22.5ms)
+  Rendered shifts/new.html.haml within layouts/application (25.1ms)
+Completed 422 Unprocessable Entity in 84ms (Views: 72.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/shifts" for ::1 at 2021-02-28 14:44:19 +0530
+Processing by ShiftsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/index.html.haml within layouts/application
+  [1m[36mShift Load (0.6ms)[0m  [1m[34mSELECT "shifts".* FROM "shifts" WHERE "shifts"."time" IS NOT NULL[0m
+  ↳ app/views/shifts/index.html.haml:4
+  Rendered shifts/index.html.haml within layouts/application (8.6ms)
+Completed 200 OK in 71ms (Views: 66.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:44:21 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  Rendered shifts/_form.html.haml (19.7ms)
+  Rendered shifts/new.html.haml within layouts/application (23.5ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    1: - if @user.errors.full_messages.any?
+    2:   - @user.errors.full_messages.each do |error_message|
+    3:     = error_message if @user.errors.full_messages.first == error_message
+    4:     %br/
+  
+app/views/shifts/_form.html.haml:1:in `_app_views_shifts__form_html_haml__4018893083350898461_70022432302680'
+app/views/shifts/new.html.haml:3:in `_app_views_shifts_new_html_haml__1618298829998809958_70022328833760'
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:44:43 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:10
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:15
+  Rendered shifts/_form.html.haml (31.2ms)
+  Rendered shifts/new.html.haml within layouts/application (36.8ms)
+Completed 200 OK in 117ms (Views: 112.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/shifts" for ::1 at 2021-02-28 14:44:47 +0530
+Processing by ShiftsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iya2TW9WKl1Oir5SOSGeLTMuaaURZT/ih5CZUXmoFRAeI4PKIcS6Uv/+NiA0i7rzNTw2pLEB8XIQQNVl9UPCIg==", "shift"=>{"team_id"=>"", "member_id"=>"", "sunday"=>"0", "monday"=>"0", "tuesday"=>"0", "wednesday"=>"0", "thrusday"=>"0", "friday"=>"0", "saturday"=>"0", "time(1i)"=>"2021", "time(2i)"=>"2", "time(3i)"=>"28", "time(4i)"=>"09", "time(5i)"=>"14"}, "commit"=>"Create Shift"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/shifts_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/shifts_controller.rb:41
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:10
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:15
+  Rendered shifts/_form.html.haml (32.0ms)
+  Rendered shifts/new.html.haml within layouts/application (39.4ms)
+Completed 422 Unprocessable Entity in 208ms (Views: 193.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/shifts/get_members?id=31&_=1614503687607" for ::1 at 2021-02-28 14:44:53 +0530
+Processing by ShiftsController#get_members as JS
+  Parameters: {"id"=>"31", "_"=>"1614503687607"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mTeam Load (0.4ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:29
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ? LIMIT ?[0m  [["team_id", 31], ["LIMIT", 11]]
+  ↳ app/controllers/shifts_controller.rb:30
+  Rendering shifts/get_members.js.erb
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ?[0m  [["team_id", 31]]
+  ↳ app/views/shifts/get_members.js.erb:4
+  Rendered shifts/get_members.js.erb (2.9ms)
+Completed 200 OK in 17ms (Views: 4.7ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/shifts" for ::1 at 2021-02-28 14:44:55 +0530
+Processing by ShiftsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"5YByFYLcAppF6EKbdgRKCrlMuXNOfJwIOC3fJDuJ38dwhUeSzE6SlfScyul7rm7Uv17mcu4YUpiv/ZMQt2II9Q==", "shift"=>{"team_id"=>"31", "member_id"=>"Select a Member", "sunday"=>"0", "monday"=>"0", "tuesday"=>"0", "wednesday"=>"0", "thrusday"=>"0", "friday"=>"0", "saturday"=>"0", "time(1i)"=>"2021", "time(2i)"=>"2", "time(3i)"=>"28", "time(4i)"=>"09", "time(5i)"=>"14"}, "commit"=>"Create Shift"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/shifts_controller.rb:41
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:41
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/shifts_controller.rb:41
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:10
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:15
+  Rendered shifts/_form.html.haml (21.8ms)
+  Rendered shifts/new.html.haml within layouts/application (25.6ms)
+Completed 422 Unprocessable Entity in 99ms (Views: 73.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/shifts" for ::1 at 2021-02-28 14:45:46 +0530
+Processing by ShiftsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/index.html.haml within layouts/application
+  [1m[36mShift Load (0.7ms)[0m  [1m[34mSELECT "shifts".* FROM "shifts" WHERE "shifts"."time" IS NOT NULL[0m
+  ↳ app/views/shifts/index.html.haml:4
+  Rendered shifts/index.html.haml within layouts/application (10.3ms)
+Completed 200 OK in 70ms (Views: 65.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:45:48 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:16
+  Rendered shifts/_form.html.haml (26.5ms)
+  Rendered shifts/new.html.haml within layouts/application (29.7ms)
+Completed 200 OK in 80ms (Views: 76.4ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/shifts" for ::1 at 2021-02-28 14:45:51 +0530
+Processing by ShiftsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"59NPQKYiaeA2qvn2CyazLmvatVRAu+htdLas6iLTpfRZkEM2uf/HP8naZZeuRcJSHzFcr5jbDot2vJZOCw56+Q==", "shift"=>{"team_id"=>"", "member_id"=>"", "sunday"=>"0", "monday"=>"0", "tuesday"=>"0", "wednesday"=>"0", "thrusday"=>"0", "friday"=>"0", "saturday"=>"0", "time(1i)"=>"2021", "time(2i)"=>"2", "time(3i)"=>"28", "time(4i)"=>"09", "time(5i)"=>"15"}, "commit"=>"Create Shift"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/shifts_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/shifts_controller.rb:41
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:16
+  Rendered shifts/_form.html.haml (31.0ms)
+  Rendered shifts/new.html.haml within layouts/application (33.5ms)
+Completed 422 Unprocessable Entity in 95ms (Views: 77.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/shifts" for ::1 at 2021-02-28 14:46:10 +0530
+Processing by ShiftsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/index.html.haml within layouts/application
+  [1m[36mShift Load (0.2ms)[0m  [1m[34mSELECT "shifts".* FROM "shifts" WHERE "shifts"."time" IS NOT NULL[0m
+  ↳ app/views/shifts/index.html.haml:4
+  Rendered shifts/index.html.haml within layouts/application (20.9ms)
+Completed 200 OK in 96ms (Views: 86.1ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:46:15 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  Rendered shifts/_form.html.haml (25.3ms)
+  Rendered shifts/new.html.haml within layouts/application (29.1ms)
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 0.3ms)
+
+
+  
+SyntaxError (/home/nithya/Desktop/janani/Ruby pgms/TeamProject/app/views/shifts/_form.html.haml:2: syntax error, unexpected '[', expecting '('
+(@shift.errors.full_messages.[0]
+                              ^
+/home/nithya/Desktop/janani/Ruby pgms/TeamProject/app/views/shifts/_form.html.haml:5: syntax error, unexpected keyword_end, expecting ')'
+"\n<br>\n".freeze);; end;; end;; 
+                              ^
+/home/nithya/Desktop/janani/Ruby pgms/TeamProject/app/views/shifts/_form.html.haml:67: syntax error, unexpected keyword_ensure, expecting ')'
+Util.html_safe(_erbout);ensure;@haml_buffer = @haml_buffer.u
+                              ^
+/home/nithya/Desktop/janani/Ruby pgms/TeamProject/app/views/shifts/_form.html.haml:67: syntax error, unexpected keyword_end, expecting ')'
+ffer.upper if @haml_buffer;end;
+                              ^
+/home/nithya/Desktop/janani/Ruby pgms/TeamProject/app/views/shifts/_form.html.haml:70: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/shifts/_form.html.haml:2: syntax error, unexpected '[', expecting '('
+app/views/shifts/_form.html.haml:5: syntax error, unexpected keyword_end, expecting ')'
+app/views/shifts/_form.html.haml:67: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/shifts/_form.html.haml:67: syntax error, unexpected keyword_end, expecting ')'
+app/views/shifts/_form.html.haml:70: syntax error, unexpected keyword_end, expecting ')'
+app/views/shifts/new.html.haml:3:in `_app_views_shifts_new_html_haml__1618298829998809958_46590680'
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:46:21 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:16
+  Rendered shifts/_form.html.haml (23.3ms)
+  Rendered shifts/new.html.haml within layouts/application (26.9ms)
+Completed 200 OK in 80ms (Views: 75.8ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/shifts" for ::1 at 2021-02-28 14:46:25 +0530
+Processing by ShiftsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B0mxaWa43TQNncJy+ob7TBYgu4qNymgahzVVjlaBmq+STITuKCpNO7zpSgD3LN+SEDLkiy2upooQ5Rm62mpNnQ==", "shift"=>{"team_id"=>"", "member_id"=>"", "sunday"=>"0", "monday"=>"0", "tuesday"=>"0", "wednesday"=>"0", "thrusday"=>"0", "friday"=>"0", "saturday"=>"0", "time(1i)"=>"2021", "time(2i)"=>"2", "time(3i)"=>"28", "time(4i)"=>"09", "time(5i)"=>"16"}, "commit"=>"Create Shift"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/shifts_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/shifts_controller.rb:41
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:16
+  Rendered shifts/_form.html.haml (27.5ms)
+  Rendered shifts/new.html.haml within layouts/application (30.1ms)
+Completed 422 Unprocessable Entity in 101ms (Views: 91.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/shifts/get_members?id=31&_=1614503785514" for ::1 at 2021-02-28 14:47:02 +0530
+Processing by ShiftsController#get_members as JS
+  Parameters: {"id"=>"31", "_"=>"1614503785514"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:29
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ? LIMIT ?[0m  [["team_id", 31], ["LIMIT", 11]]
+  ↳ app/controllers/shifts_controller.rb:30
+  Rendering shifts/get_members.js.erb
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ?[0m  [["team_id", 31]]
+  ↳ app/views/shifts/get_members.js.erb:4
+  Rendered shifts/get_members.js.erb (1.7ms)
+Completed 200 OK in 16ms (Views: 3.4ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/shifts" for ::1 at 2021-02-28 14:47:04 +0530
+Processing by ShiftsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"RU8Te2CFXr923cjtZcPhSZZK/6tandXMUptiT51JBYrQSib8LhfOsMepQJ9oacWXkFigqvr5G1zFSy57EaLSuA==", "shift"=>{"team_id"=>"31", "member_id"=>"Select a Member", "sunday"=>"0", "monday"=>"0", "tuesday"=>"0", "wednesday"=>"0", "thrusday"=>"0", "friday"=>"0", "saturday"=>"0", "time(1i)"=>"2021", "time(2i)"=>"2", "time(3i)"=>"28", "time(4i)"=>"09", "time(5i)"=>"16"}, "commit"=>"Create Shift"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/shifts_controller.rb:41
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:41
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/shifts_controller.rb:41
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:16
+  Rendered shifts/_form.html.haml (29.7ms)
+  Rendered shifts/new.html.haml within layouts/application (33.3ms)
+Completed 422 Unprocessable Entity in 98ms (Views: 85.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/shifts" for ::1 at 2021-02-28 14:49:09 +0530
+Processing by ShiftsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/index.html.haml within layouts/application
+  [1m[36mShift Load (0.3ms)[0m  [1m[34mSELECT "shifts".* FROM "shifts" WHERE "shifts"."time" IS NOT NULL[0m
+  ↳ app/views/shifts/index.html.haml:4
+  Rendered shifts/index.html.haml within layouts/application (10.9ms)
+Completed 200 OK in 197ms (Views: 77.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:49:11 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:16
+  Rendered shifts/_form.html.haml (33.2ms)
+  Rendered shifts/new.html.haml within layouts/application (35.8ms)
+Completed 200 OK in 113ms (Views: 77.9ms | ActiveRecord: 2.9ms)
+
+
+Started POST "/shifts" for ::1 at 2021-02-28 14:49:14 +0530
+Processing by ShiftsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F0VArkJPTZbMCBZxVR0amzrSGCF0DmpCz35AHOTpAuepBkzYXZLjSTN4ihDwfmvnTjnx2qxujKTNdHq4zTTd6g==", "shift"=>{"team_id"=>"", "member_id"=>"", "sunday"=>"0", "monday"=>"0", "tuesday"=>"0", "wednesday"=>"0", "thrusday"=>"0", "friday"=>"0", "saturday"=>"0", "time(1i)"=>"2021", "time(2i)"=>"2", "time(3i)"=>"28", "time(4i)"=>"09", "time(5i)"=>"19"}, "commit"=>"Create Shift"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/shifts_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/shifts_controller.rb:41
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:16
+  Rendered shifts/_form.html.haml (26.3ms)
+  Rendered shifts/new.html.haml within layouts/application (29.3ms)
+Completed 422 Unprocessable Entity in 101ms (Views: 89.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/shifts" for ::1 at 2021-02-28 14:51:14 +0530
+Processing by ShiftsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 1.1ms)
+
+
+  
+ArgumentError (Unknown validator: 'MessageValidator'):
+  
+app/models/shift.rb:7:in `<class:Shift>'
+app/models/shift.rb:1:in `<main>'
+app/controllers/shifts_controller.rb:6:in `index'
+Started GET "/shifts" for ::1 at 2021-02-28 14:52:04 +0530
+Processing by ShiftsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/index.html.haml within layouts/application
+  [1m[36mShift Load (0.2ms)[0m  [1m[34mSELECT "shifts".* FROM "shifts" WHERE "shifts"."time" IS NOT NULL[0m
+  ↳ app/views/shifts/index.html.haml:4
+  Rendered shifts/index.html.haml within layouts/application (9.5ms)
+Completed 200 OK in 87ms (Views: 60.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:52:05 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  [1m[36mMember Load (0.6ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:16
+  Rendered shifts/_form.html.haml (45.7ms)
+  Rendered shifts/new.html.haml within layouts/application (48.4ms)
+Completed 200 OK in 174ms (Views: 90.9ms | ActiveRecord: 5.6ms)
+
+
+Started POST "/shifts" for ::1 at 2021-02-28 14:52:08 +0530
+Processing by ShiftsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LYJYpBsyfQ9jOLbNG9r24z9ZMJNNZGXluxMEu4oopleTwVTSBO/T0JxIKqy+uYefS7LZaJUEgwO5GT4fo/V5Wg==", "shift"=>{"team_id"=>"", "member_id"=>"", "sunday"=>"0", "monday"=>"0", "tuesday"=>"0", "wednesday"=>"0", "thrusday"=>"0", "friday"=>"0", "saturday"=>"0", "time(1i)"=>"2021", "time(2i)"=>"2", "time(3i)"=>"28", "time(4i)"=>"09", "time(5i)"=>"22"}, "commit"=>"Create Shift"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/shifts_controller.rb:41
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/shifts_controller.rb:41
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:16
+  Rendered shifts/_form.html.haml (25.9ms)
+  Rendered shifts/new.html.haml within layouts/application (28.6ms)
+Completed 422 Unprocessable Entity in 108ms (Views: 78.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/shifts" for ::1 at 2021-02-28 14:53:31 +0530
+Processing by ShiftsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/index.html.haml within layouts/application
+  [1m[36mShift Load (0.2ms)[0m  [1m[34mSELECT "shifts".* FROM "shifts" WHERE "shifts"."time" IS NOT NULL[0m
+  ↳ app/views/shifts/index.html.haml:4
+  Rendered shifts/index.html.haml within layouts/application (7.4ms)
+Completed 200 OK in 81ms (Views: 54.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:53:32 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:17
+  Rendered shifts/_form.html.haml (37.6ms)
+  Rendered shifts/new.html.haml within layouts/application (41.5ms)
+Completed 200 OK in 139ms (Views: 106.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:54:27 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  Rendered shifts/_form.html.haml (2.6ms)
+  Rendered shifts/new.html.haml within layouts/application (6.6ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (Inconsistent indentation: 11 spaces used for indentation, but the rest of the document was indented using 2 spaces.):
+    10:       .input-group.form-group
+    11:         = f.collection_select :team_id, Team.order(:team_name), :id, :team_name,{:prompt => "Select a Team        "}, {:class=>"team-selection form-control",required: true}
+    12:         %span
+    13:            = (@shift.errors && @shift.errors[:member_id] ? "Please select Team member" :"")
+    14:   .form-group
+    15:     %label.col-md-4.control-label Members
+    16:     .col-md-4.inputGroupContainer
+  
+app/views/shifts/_form.html.haml:13
+app/views/shifts/new.html.haml:3:in `_app_views_shifts_new_html_haml__1618298829998809958_70022297652400'
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:54:31 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  Rendered shifts/_form.html.haml (2.9ms)
+  Rendered shifts/new.html.haml within layouts/application (6.1ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (Inconsistent indentation: 9 spaces used for indentation, but the rest of the document was indented using 2 spaces.):
+    10:       .input-group.form-group
+    11:         = f.collection_select :team_id, Team.order(:team_name), :id, :team_name,{:prompt => "Select a Team        "}, {:class=>"team-selection form-control",required: true}
+    12:         %span
+    13:          = (@shift.errors && @shift.errors[:member_id] ? "Please select Team member" :"")
+    14:   .form-group
+    15:     %label.col-md-4.control-label Members
+    16:     .col-md-4.inputGroupContainer
+  
+app/views/shifts/_form.html.haml:13
+app/views/shifts/new.html.haml:3:in `_app_views_shifts_new_html_haml__1618298829998809958_70022378899360'
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:54:37 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:18
+  Rendered shifts/_form.html.haml (19.7ms)
+  Rendered shifts/new.html.haml within layouts/application (22.4ms)
+Completed 200 OK in 84ms (Views: 77.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:54:54 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:18
+  Rendered shifts/_form.html.haml (21.0ms)
+  Rendered shifts/new.html.haml within layouts/application (27.7ms)
+Completed 200 OK in 80ms (Views: 76.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:55:05 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:18
+  Rendered shifts/_form.html.haml (75.6ms)
+  Rendered shifts/new.html.haml within layouts/application (86.9ms)
+Completed 200 OK in 150ms (Views: 142.7ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/shifts" for ::1 at 2021-02-28 14:55:14 +0530
+Processing by ShiftsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OLLCIHKTAQGEAqqFo7AmMEARQCVcpD0sJ8jefg0IhIatt/enPAGRDjV2IveuGgLuRgMfJPzA87ywGJJKgeNTtA==", "shift"=>{"team_id"=>"", "member_id"=>"", "sunday"=>"0", "monday"=>"0", "tuesday"=>"0", "wednesday"=>"0", "thrusday"=>"0", "friday"=>"0", "saturday"=>"0", "time(1i)"=>"2021", "time(2i)"=>"2", "time(3i)"=>"28", "time(4i)"=>"09", "time(5i)"=>"25"}, "commit"=>"Create Shift"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/shifts_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/shifts_controller.rb:41
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:17
+  Rendered shifts/_form.html.haml (35.7ms)
+  Rendered shifts/new.html.haml within layouts/application (40.1ms)
+Completed 422 Unprocessable Entity in 110ms (Views: 90.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/shifts" for ::1 at 2021-02-28 14:56:02 +0530
+Processing by ShiftsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/index.html.haml within layouts/application
+  [1m[36mShift Load (0.2ms)[0m  [1m[34mSELECT "shifts".* FROM "shifts" WHERE "shifts"."time" IS NOT NULL[0m
+  ↳ app/views/shifts/index.html.haml:4
+  Rendered shifts/index.html.haml within layouts/application (14.9ms)
+Completed 200 OK in 90ms (Views: 76.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:56:04 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:12
+  Rendered shifts/_form.html.haml (28.7ms)
+  Rendered shifts/new.html.haml within layouts/application (32.5ms)
+Completed 200 OK in 83ms (Views: 78.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/shifts" for ::1 at 2021-02-28 14:56:09 +0530
+Processing by ShiftsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yLAaqIJb5j1v/YSb8JqU+cYvgpInVf3J39Tug1nN61d28xbenYZI4pCNGPpV+eWFssRraf81Gy/d3tQncBA0Wg==", "shift"=>{"team_id"=>"", "member_id"=>"", "sunday"=>"0", "monday"=>"0", "tuesday"=>"0", "wednesday"=>"0", "thrusday"=>"0", "friday"=>"0", "saturday"=>"0", "time(1i)"=>"2021", "time(2i)"=>"2", "time(3i)"=>"28", "time(4i)"=>"09", "time(5i)"=>"26"}, "commit"=>"Create Shift"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/shifts_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/shifts_controller.rb:41
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:12
+  Rendered shifts/_form.html.haml (32.5ms)
+  Rendered shifts/new.html.haml within layouts/application (37.4ms)
+Completed 422 Unprocessable Entity in 101ms (Views: 88.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/shifts/get_members?id=31&_=1614504369875" for ::1 at 2021-02-28 14:56:12 +0530
+Processing by ShiftsController#get_members as JS
+  Parameters: {"id"=>"31", "_"=>"1614504369875"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mTeam Load (0.8ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:29
+  [1m[36mMember Load (0.5ms)[0m  [1m[34mSELECT  "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ? LIMIT ?[0m  [["team_id", 31], ["LIMIT", 11]]
+  ↳ app/controllers/shifts_controller.rb:30
+  Rendering shifts/get_members.js.erb
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ?[0m  [["team_id", 31]]
+  ↳ app/views/shifts/get_members.js.erb:4
+  Rendered shifts/get_members.js.erb (3.2ms)
+Completed 200 OK in 41ms (Views: 5.4ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/shifts" for ::1 at 2021-02-28 14:56:15 +0530
+Processing by ShiftsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sJPuFFb6RA21xIGnSTMi7ki//YbrpEyNj5Nox7V2fJ8lltuTGGjUAgSwCdVEmQYwTq2ih0vAgh0YQyTzOZ2rrQ==", "shift"=>{"team_id"=>"31", "member_id"=>"Select a Member", "sunday"=>"0", "monday"=>"0", "tuesday"=>"0", "wednesday"=>"0", "thrusday"=>"0", "friday"=>"0", "saturday"=>"0", "time(1i)"=>"2021", "time(2i)"=>"2", "time(3i)"=>"28", "time(4i)"=>"09", "time(5i)"=>"26"}, "commit"=>"Create Shift"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/shifts_controller.rb:41
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:41
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/shifts_controller.rb:41
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:12
+  Rendered shifts/_form.html.haml (20.3ms)
+  Rendered shifts/new.html.haml within layouts/application (24.8ms)
+Completed 422 Unprocessable Entity in 92ms (Views: 80.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/shifts" for ::1 at 2021-02-28 14:56:23 +0530
+Processing by ShiftsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/index.html.haml within layouts/application
+  [1m[36mShift Load (0.2ms)[0m  [1m[34mSELECT "shifts".* FROM "shifts" WHERE "shifts"."time" IS NOT NULL[0m
+  ↳ app/views/shifts/index.html.haml:4
+  Rendered shifts/index.html.haml within layouts/application (10.6ms)
+Completed 200 OK in 85ms (Views: 78.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:56:24 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:12
+  Rendered shifts/_form.html.haml (26.1ms)
+  Rendered shifts/new.html.haml within layouts/application (31.5ms)
+Completed 200 OK in 78ms (Views: 74.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/shifts" for ::1 at 2021-02-28 14:56:27 +0530
+Processing by ShiftsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"IUEfRXd8iWRCPws5Alb42go9rHC5WSux8yFWAWRRX0OfAhMzaKEnu71Pl1inNYmmftZFi2E5zVfxK2ylTYyATg==", "shift"=>{"team_id"=>"", "member_id"=>"", "sunday"=>"0", "monday"=>"0", "tuesday"=>"0", "wednesday"=>"0", "thrusday"=>"0", "friday"=>"0", "saturday"=>"0", "time(1i)"=>"2021", "time(2i)"=>"2", "time(3i)"=>"28", "time(4i)"=>"09", "time(5i)"=>"26"}, "commit"=>"Create Shift"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/shifts_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/shifts_controller.rb:41
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:12
+  Rendered shifts/_form.html.haml (29.3ms)
+  Rendered shifts/new.html.haml within layouts/application (34.5ms)
+Completed 422 Unprocessable Entity in 98ms (Views: 87.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/shifts/get_members?id=31&_=1614504387696" for ::1 at 2021-02-28 14:56:30 +0530
+Processing by ShiftsController#get_members as JS
+  Parameters: {"id"=>"31", "_"=>"1614504387696"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mTeam Load (0.6ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:29
+  [1m[36mMember Load (0.3ms)[0m  [1m[34mSELECT  "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ? LIMIT ?[0m  [["team_id", 31], ["LIMIT", 11]]
+  ↳ app/controllers/shifts_controller.rb:30
+  Rendering shifts/get_members.js.erb
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ?[0m  [["team_id", 31]]
+  ↳ app/views/shifts/get_members.js.erb:4
+  Rendered shifts/get_members.js.erb (2.5ms)
+Completed 200 OK in 21ms (Views: 4.0ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/shifts" for ::1 at 2021-02-28 14:56:38 +0530
+Processing by ShiftsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2IscCD9j6zVDL4Ji9gciJr2JOnjE54YQKP74LMaF4SJNjimPcfF7OvJbChD7rQb4u5tleWSDSIC/LrQYSm42EA==", "shift"=>{"team_id"=>"31", "member_id"=>"Select a Member", "sunday"=>"0", "monday"=>"0", "tuesday"=>"0", "wednesday"=>"0", "thrusday"=>"0", "friday"=>"0", "saturday"=>"0", "time(1i)"=>"2021", "time(2i)"=>"2", "time(3i)"=>"28", "time(4i)"=>"09", "time(5i)"=>"26"}, "commit"=>"Create Shift"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/shifts_controller.rb:41
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:41
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/shifts_controller.rb:41
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:6
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:12
+  Rendered shifts/_form.html.haml (27.2ms)
+  Rendered shifts/new.html.haml within layouts/application (30.9ms)
+Completed 422 Unprocessable Entity in 104ms (Views: 90.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/shifts" for ::1 at 2021-02-28 14:57:29 +0530
+Processing by ShiftsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/index.html.haml within layouts/application
+  [1m[36mShift Load (0.1ms)[0m  [1m[34mSELECT "shifts".* FROM "shifts" WHERE "shifts"."time" IS NOT NULL[0m
+  ↳ app/views/shifts/index.html.haml:4
+  Rendered shifts/index.html.haml within layouts/application (12.7ms)
+Completed 200 OK in 68ms (Views: 64.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/shifts/new" for ::1 at 2021-02-28 14:57:31 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:16
+  Rendered shifts/_form.html.haml (23.8ms)
+  Rendered shifts/new.html.haml within layouts/application (27.8ms)
+Completed 200 OK in 78ms (Views: 74.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/shifts" for ::1 at 2021-02-28 14:57:34 +0530
+Processing by ShiftsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f7YjxnxeHosJx976yYG4J0RrCiRO0/cQJWLd0OPZVKTB9S+wY4OwVPa3Qpts4slbMIDj35azEfYnaOd0ygSLqQ==", "shift"=>{"team_id"=>"", "member_id"=>"", "sunday"=>"0", "monday"=>"0", "tuesday"=>"0", "wednesday"=>"0", "thrusday"=>"0", "friday"=>"0", "saturday"=>"0", "time(1i)"=>"2021", "time(2i)"=>"2", "time(3i)"=>"28", "time(4i)"=>"09", "time(5i)"=>"27"}, "commit"=>"Create Shift"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/shifts_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/shifts_controller.rb:41
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:16
+  Rendered shifts/_form.html.haml (38.4ms)
+  Rendered shifts/new.html.haml within layouts/application (41.2ms)
+Completed 422 Unprocessable Entity in 107ms (Views: 90.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/shifts/get_members?id=31&_=1614504454454" for ::1 at 2021-02-28 14:57:37 +0530
+Processing by ShiftsController#get_members as JS
+  Parameters: {"id"=>"31", "_"=>"1614504454454"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mTeam Load (0.6ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:29
+  [1m[36mMember Load (0.4ms)[0m  [1m[34mSELECT  "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ? LIMIT ?[0m  [["team_id", 31], ["LIMIT", 11]]
+  ↳ app/controllers/shifts_controller.rb:30
+  Rendering shifts/get_members.js.erb
+  [1m[36mMember Load (0.4ms)[0m  [1m[34mSELECT "members".* FROM "members" INNER JOIN "shifts" ON "members"."id" = "shifts"."member_id" WHERE "shifts"."team_id" = ?[0m  [["team_id", 31]]
+  ↳ app/views/shifts/get_members.js.erb:4
+  Rendered shifts/get_members.js.erb (5.5ms)
+Completed 200 OK in 32ms (Views: 10.0ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/shifts" for ::1 at 2021-02-28 14:57:40 +0530
+Processing by ShiftsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"k+FlKEiD5/U973HG00qvUw3qVDSpBcbPr9kI8eJCXHoG5FCvBhF3+oyb+bTe4IuNC/gLNQlhCF84CUTFbqmLSA==", "shift"=>{"team_id"=>"31", "member_id"=>"Select a Member", "sunday"=>"0", "monday"=>"0", "tuesday"=>"0", "wednesday"=>"0", "thrusday"=>"0", "friday"=>"0", "saturday"=>"0", "time(1i)"=>"2021", "time(2i)"=>"2", "time(3i)"=>"28", "time(4i)"=>"09", "time(5i)"=>"27"}, "commit"=>"Create Shift"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/shifts_controller.rb:41
+  [1m[36mTeam Load (0.7ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:41
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:41
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/shifts_controller.rb:41
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:11
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:16
+  Rendered shifts/_form.html.haml (20.8ms)
+  Rendered shifts/new.html.haml within layouts/application (24.9ms)
+Completed 422 Unprocessable Entity in 87ms (Views: 73.3ms | ActiveRecord: 1.5ms)
+
+
+Started POST "/shifts" for ::1 at 2021-02-28 14:58:53 +0530
+Processing by ShiftsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JKAF3dueO6vjiwBseIpYL/eJKuRxf8mbYtVDtFKB0LOxpTBalQyrpFL/iB51IHzx8Zt15dEbBwv1BQ+A3moHgQ==", "shift"=>{"team_id"=>"31", "member_id"=>"6", "sunday"=>"1", "monday"=>"1", "tuesday"=>"1", "wednesday"=>"1", "thrusday"=>"1", "friday"=>"1", "saturday"=>"1", "time(1i)"=>"2021", "time(2i)"=>"2", "time(3i)"=>"28", "time(4i)"=>"09", "time(5i)"=>"27"}, "commit"=>"Create Shift"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/shifts_controller.rb:41
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:41
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:41
+  [1m[36mShift Create (0.5ms)[0m  [1m[32mINSERT INTO "shifts" ("sunday", "monday", "tuesday", "wednesday", "thrusday", "friday", "saturday", "time", "member_id", "team_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["sunday", 1], ["monday", 1], ["tuesday", 1], ["wednesday", 1], ["thrusday", 1], ["friday", 1], ["saturday", 1], ["time", "2000-01-01 09:27:00"], ["member_id", 6], ["team_id", 31], ["created_at", "2021-02-28 09:28:53.903322"], ["updated_at", "2021-02-28 09:28:53.903322"]]
+  ↳ app/controllers/shifts_controller.rb:41
+[ActiveJob] Enqueued ActionMailer::DeliveryJob (Job ID: c73b20b2-eccd-44a4-aff0-b811dff7d620) to Async(mailers) with arguments: "ShiftMailer", "send_mail", "deliver_now", #<GlobalID:0x007f5eb659f260 @uri=#<URI::GID gid://team-project/Shift/52>>
+  [1m[36mShift Load (0.2ms)[0m  [1m[34mSELECT  "shifts".* FROM "shifts" WHERE "shifts"."id" = ? LIMIT ?[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[35m (100.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/shifts_controller.rb:41
+[ActiveJob] Enqueued ActionMailer::DeliveryJob (Job ID: 742566c5-2fd7-4045-bf9c-eb855cf15221) to Async(mailers) with arguments: "ShiftMailer", "send_mail", "deliver_now", #<GlobalID:0x007f5eb6565358 @uri=#<URI::GID gid://team-project/Shift/52>>
+  [1m[36mShift Load (0.7ms)[0m  [1m[34mSELECT  "shifts".* FROM "shifts" WHERE "shifts"."id" = ? LIMIT ?[0m  [["id", 52], ["LIMIT", 1]]
+Redirected to http://localhost:3000/shifts/52
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+Completed 302 Found in 149ms (ActiveRecord: 101.2ms)
+
+
+[ActiveJob] [ActionMailer::DeliveryJob] [742566c5-2fd7-4045-bf9c-eb855cf15221] Performing ActionMailer::DeliveryJob (Job ID: 742566c5-2fd7-4045-bf9c-eb855cf15221) from Async(mailers) with arguments: "ShiftMailer", "send_mail", "deliver_now", #<GlobalID:0x007f5eb65716f8 @uri=#<URI::GID gid://team-project/Shift/52>>
+Started GET "/shifts/52" for ::1 at 2021-02-28 14:58:54 +0530
+Processing by ShiftsController#show as HTML
+  Parameters: {"id"=>"52"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mShift Load (0.6ms)[0m  [1m[34mSELECT  "shifts".* FROM "shifts" WHERE "shifts"."id" = ? LIMIT ?[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:78
+  Rendering shifts/show.html.haml within layouts/application
+  [1m[36mTeam Load (0.8ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/models/shift.rb:17
+  [1m[36mMember Load (0.4ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/shift.rb:13
+  Rendered shifts/show.html.haml within layouts/application (12.2ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [742566c5-2fd7-4045-bf9c-eb855cf15221]   Rendering shift_mailer/send_mail.html.haml within layouts/mailer
+[ActiveJob] [ActionMailer::DeliveryJob] [742566c5-2fd7-4045-bf9c-eb855cf15221]   [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::DeliveryJob] [742566c5-2fd7-4045-bf9c-eb855cf15221]   ↳ app/models/shift.rb:13
+[ActiveJob] [ActionMailer::DeliveryJob] [742566c5-2fd7-4045-bf9c-eb855cf15221]   [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::DeliveryJob] [742566c5-2fd7-4045-bf9c-eb855cf15221]   ↳ app/models/shift.rb:17
+[ActiveJob] [ActionMailer::DeliveryJob] [742566c5-2fd7-4045-bf9c-eb855cf15221]   Rendered shift_mailer/send_mail.html.haml within layouts/mailer (18.8ms)
+Completed 200 OK in 88ms (Views: 72.6ms | ActiveRecord: 2.1ms)
+
+
+[ActiveJob] [ActionMailer::DeliveryJob] [742566c5-2fd7-4045-bf9c-eb855cf15221]   Rendering shift_mailer/send_mail.text.haml within layouts/mailer
+[ActiveJob] [ActionMailer::DeliveryJob] [742566c5-2fd7-4045-bf9c-eb855cf15221]   Rendered shift_mailer/send_mail.text.haml within layouts/mailer (4.8ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [742566c5-2fd7-4045-bf9c-eb855cf15221] ShiftMailer#send_mail: processed outbound mail in 153.5ms
+Started GET "/shifts" for ::1 at 2021-02-28 14:58:56 +0530
+Processing by ShiftsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/index.html.haml within layouts/application
+  [1m[36mShift Load (0.2ms)[0m  [1m[34mSELECT "shifts".* FROM "shifts" WHERE "shifts"."time" IS NOT NULL[0m
+  ↳ app/views/shifts/index.html.haml:4
+  [1m[36mTeam Load (0.6ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/models/shift.rb:17
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/models/shift.rb:13
+  Rendered shifts/index.html.haml within layouts/application (13.8ms)
+Completed 200 OK in 77ms (Views: 71.6ms | ActiveRecord: 1.1ms)
+
+
+[ActiveJob] [ActionMailer::DeliveryJob] [742566c5-2fd7-4045-bf9c-eb855cf15221] Sent mail to cr_dev@full-cycle.com (3293.2ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [742566c5-2fd7-4045-bf9c-eb855cf15221] Date: Sun, 28 Feb 2021 14:58:54 +0530
+From: from@example.com
+To: cr_dev@full-cycle.com
+Message-ID: <603b625635847_f553faf5821c8383588@nithya-Lenovo-V110-15ISK.mail>
+Subject: You got a new shifts  updates!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_603b62563455a_f553faf5821c8383413";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_603b62563455a_f553faf5821c8383413
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_603b62563455a_f553faf5821c8383413
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+<style>
+  /* Email styles need to be inline */
+</style>
+</head>
+<body>
+<!DOCTYPE html>
+<html>
+<head>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+</head>
+<body>
+<p>Hi,</p>
+<p>
+You got a new shift for
+<b>
+3A
+!
+</b>
+team member
+</p>
+<p>
+Shift details
+<br>
+--------------------------
+</p>
+<p>
+Team Name:
+Team3
+</p>
+<p>
+WeeKs:
+Sunday,Monday,Tuesday,Wednesday,Thrusday,Friday,Saturday
+</p>
+<p>
+Time:
+09:27:00
+</p>
+</body>
+</html>
+
+</body>
+</html>
+
+----==_mimepart_603b62563455a_f553faf5821c8383413--
+
+[ActiveJob] [ActionMailer::DeliveryJob] [742566c5-2fd7-4045-bf9c-eb855cf15221] Performed ActionMailer::DeliveryJob (Job ID: 742566c5-2fd7-4045-bf9c-eb855cf15221) from Async(mailers) in 3458.25ms
+Started DELETE "/shifts/52" for ::1 at 2021-02-28 14:59:00 +0530
+Processing by ShiftsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"iicyA3VpG/IjEcP1M/6d+YLk1XaIHkU166kNR+g5JPgfIgeEO/uL/ZJlS4c+VLknhPaKdyh6i6V8eUFzZNLzyg==", "id"=>"52"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mShift Load (0.3ms)[0m  [1m[34mSELECT  "shifts".* FROM "shifts" WHERE "shifts"."id" = ? LIMIT ?[0m  [["id", 52], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:78
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/shifts_controller.rb:68
+  [1m[36mShift Destroy (0.6ms)[0m  [1m[31mDELETE FROM "shifts" WHERE "shifts"."id" = ?[0m  [["id", 52]]
+  ↳ app/controllers/shifts_controller.rb:68
+  [1m[35m (104.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/shifts_controller.rb:68
+Redirected to http://localhost:3000/shifts
+Completed 302 Found in 123ms (ActiveRecord: 105.8ms)
+
+
+Started GET "/shifts" for ::1 at 2021-02-28 14:59:01 +0530
+Processing by ShiftsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/index.html.haml within layouts/application
+  [1m[36mShift Load (0.9ms)[0m  [1m[34mSELECT "shifts".* FROM "shifts" WHERE "shifts"."time" IS NOT NULL[0m
+  ↳ app/views/shifts/index.html.haml:4
+  Rendered shifts/index.html.haml within layouts/application (33.5ms)
+Completed 200 OK in 117ms (Views: 106.0ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/shifts/new" for ::1 at 2021-02-28 15:00:11 +0530
+Processing by ShiftsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  Rendering shifts/new.html.haml within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT "teams".* FROM "teams" ORDER BY "teams"."team_name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:10
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT "members".* FROM "members" ORDER BY "members"."name" ASC[0m
+  ↳ app/views/shifts/_form.html.haml:15
+  Rendered shifts/_form.html.haml (34.1ms)
+  Rendered shifts/new.html.haml within layouts/application (36.8ms)
+Completed 200 OK in 121ms (Views: 77.6ms | ActiveRecord: 4.3ms)
+
+
+Started POST "/shifts" for ::1 at 2021-02-28 15:00:19 +0530
+Processing by ShiftsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"x2LOh1D332jN5IjazmNVn7ThcCzMk560ep8xNM8H08t5IcLxTypxtzKUFLtrACTjwAqZ1xTzeFJ4lQuQ5toMxg==", "shift"=>{"team_id"=>"31", "member_id"=>"2", "sunday"=>"0", "monday"=>"1", "tuesday"=>"0", "wednesday"=>"0", "thrusday"=>"0", "friday"=>"0", "saturday"=>"0", "time(1i)"=>"2021", "time(2i)"=>"2", "time(3i)"=>"28", "time(4i)"=>"09", "time(5i)"=>"30"}, "commit"=>"Create Shift"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/shifts_controller.rb:40
+  [1m[36mTeam Load (0.4ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:40
+  [1m[36mMember Load (0.2ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:40
+  [1m[36mShift Create (0.5ms)[0m  [1m[32mINSERT INTO "shifts" ("monday", "time", "member_id", "team_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["monday", 1], ["time", "2000-01-01 09:30:00"], ["member_id", 2], ["team_id", 31], ["created_at", "2021-02-28 09:30:19.032089"], ["updated_at", "2021-02-28 09:30:19.032089"]]
+  ↳ app/controllers/shifts_controller.rb:40
+[ActiveJob] Enqueued ActionMailer::DeliveryJob (Job ID: 67186767-5a52-4521-a2cf-e9e618951a76) to Async(mailers) with arguments: "ShiftMailer", "send_mail", "deliver_now", #<GlobalID:0x007f5eb5bb4e30 @uri=#<URI::GID gid://team-project/Shift/53>>
+  [1m[36mShift Load (1.0ms)[0m  [1m[34mSELECT  "shifts".* FROM "shifts" WHERE "shifts"."id" = ? LIMIT ?[0m  [["id", 53], ["LIMIT", 1]]
+  [1m[35m (129.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  ↳ app/controllers/shifts_controller.rb:40
+[ActiveJob] [ActionMailer::DeliveryJob] [67186767-5a52-4521-a2cf-e9e618951a76] Performing ActionMailer::DeliveryJob (Job ID: 67186767-5a52-4521-a2cf-e9e618951a76) from Async(mailers) with arguments: "ShiftMailer", "send_mail", "deliver_now", #<GlobalID:0x007f5eb5b689b8 @uri=#<URI::GID gid://team-project/Shift/53>>
+Redirected to http://localhost:3000/shifts/53
+Completed 302 Found in 213ms (ActiveRecord: 130.8ms)
+
+
+[ActiveJob] [ActionMailer::DeliveryJob] [67186767-5a52-4521-a2cf-e9e618951a76]   Rendering shift_mailer/send_mail.html.haml within layouts/mailer
+[ActiveJob] [ActionMailer::DeliveryJob] [67186767-5a52-4521-a2cf-e9e618951a76]   [1m[36mMember Load (0.9ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::DeliveryJob] [67186767-5a52-4521-a2cf-e9e618951a76]   ↳ app/models/shift.rb:13
+[ActiveJob] [ActionMailer::DeliveryJob] [67186767-5a52-4521-a2cf-e9e618951a76]   [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::DeliveryJob] [67186767-5a52-4521-a2cf-e9e618951a76]   ↳ app/models/shift.rb:17
+[ActiveJob] [ActionMailer::DeliveryJob] [67186767-5a52-4521-a2cf-e9e618951a76]   Rendered shift_mailer/send_mail.html.haml within layouts/mailer (29.1ms)
+Started GET "/shifts/53" for ::1 at 2021-02-28 15:00:19 +0530
+[ActiveJob] [ActionMailer::DeliveryJob] [67186767-5a52-4521-a2cf-e9e618951a76]   Rendering shift_mailer/send_mail.text.haml within layouts/mailer
+Processing by ShiftsController#show as HTML
+[ActiveJob] [ActionMailer::DeliveryJob] [67186767-5a52-4521-a2cf-e9e618951a76]   Rendered shift_mailer/send_mail.text.haml within layouts/mailer (4.7ms)
+  Parameters: {"id"=>"53"}
+[ActiveJob] [ActionMailer::DeliveryJob] [67186767-5a52-4521-a2cf-e9e618951a76] ShiftMailer#send_mail: processed outbound mail in 99.3ms
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ /home/nithya/.rvm/gems/ruby-2.4.0/gems/activerecord-5.2.4.5/lib/active_record/log_subscriber.rb:98
+  [1m[36mShift Load (0.3ms)[0m  [1m[34mSELECT  "shifts".* FROM "shifts" WHERE "shifts"."id" = ? LIMIT ?[0m  [["id", 53], ["LIMIT", 1]]
+  ↳ app/controllers/shifts_controller.rb:75
+  Rendering shifts/show.html.haml within layouts/application
+  [1m[36mTeam Load (0.1ms)[0m  [1m[34mSELECT  "teams".* FROM "teams" WHERE "teams"."id" = ? LIMIT ?[0m  [["id", 31], ["LIMIT", 1]]
+  ↳ app/models/shift.rb:17
+  [1m[36mMember Load (0.1ms)[0m  [1m[34mSELECT  "members".* FROM "members" WHERE "members"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/models/shift.rb:13
+  Rendered shifts/show.html.haml within layouts/application (5.2ms)
+Completed 200 OK in 73ms (Views: 65.0ms | ActiveRecord: 0.7ms)
+
+
+[ActiveJob] [ActionMailer::DeliveryJob] [67186767-5a52-4521-a2cf-e9e618951a76] Sent mail to jananirails@gmail.com (3317.4ms)
+[ActiveJob] [ActionMailer::DeliveryJob] [67186767-5a52-4521-a2cf-e9e618951a76] Date: Sun, 28 Feb 2021 15:00:19 +0530
+From: from@example.com
+To: jananirails@gmail.com
+Message-ID: <603b62ab461d9_f553faf5821c8383756@nithya-Lenovo-V110-15ISK.mail>
+Subject: You got a new shift  updates!
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_603b62ab44ebd_f553faf5821c83836e9";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_603b62ab44ebd_f553faf5821c83836e9
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_603b62ab44ebd_f553faf5821c83836e9
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta content='text/html; charset=utf-8' http-equiv='Content-Type'>
+<style>
+  /* Email styles need to be inline */
+</style>
+</head>
+<body>
+<!DOCTYPE html>
+<html>
+<head>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'>
+</head>
+<body>
+<p>Hi,</p>
+<p>
+You got a new shift for
+<b>
+B
+!
+</b>
+team member
+</p>
+<p>
+Shift details
+<br>
+--------------------------
+</p>
+<p>
+Team Name:
+Team3
+</p>
+<p>
+WeeKs:
+Monday
+</p>
+<p>
+Time:
+09:30:00
+</p>
+</body>
+</html>
+
+</body>
+</html>
+
+----==_mimepart_603b62ab44ebd_f553faf5821c83836e9--
+
+[ActiveJob] [ActionMailer::DeliveryJob] [67186767-5a52-4521-a2cf-e9e618951a76] Performed ActionMailer::DeliveryJob (Job ID: 67186767-5a52-4521-a2cf-e9e618951a76) from Async(mailers) in 3422.78ms

@@ -13,5 +13,3 @@ $(document).ready ->
       type: 'GET'
       dataType: 'script'
       data: id: $('.team-selection option:selected').val()
-    return
-  return

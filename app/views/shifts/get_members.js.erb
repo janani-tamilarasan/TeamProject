@@ -1,10 +1,6 @@
 console.log(12)
-alert(2)
 $('.member-selection').empty();
-$('.member-selection').append( $('
-%option> Select the Member
-'));
-- @members.each do |member|
-  $('.member-selection').append($('
-  %option{:value => "#{member.id}"}>= member.name
-  '));
+$('.member-selection').append( $('<option> Select a Member</option>'));
+<% @members.each do |member| %>
+  $('.member-selection').append($("<option value=<%=member.name%>><%=member.name%></option>"));
+<% end %>
